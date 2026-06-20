@@ -7,7 +7,7 @@
 <title>CKH — Citizen Knowledge Harvest | Humanity's Missing Knowledge Ledger</title>
 <meta name="description" content="CKH is the world's first infrastructure for capturing, validating, preserving, tracing, and rewarding the invisible knowledge produced daily by billions of people. Transforming everyday human experience into civilization's largest research commons." />
 <meta name="keywords" content="Citizen Knowledge Harvest, CKH, Invisible Research Theory, Knowledge Commons, Knowledge Provenance, Knowledge DNA, Civilizational Memory, Grassroots Innovation, Tacit Knowledge" />
-<meta name="author" content="CKH Protocol" />
+<meta name="author" content="Kallol Chakrabarti" />
 <meta name="robots" content="index, follow" />
 
 <meta property="og:type" content="website" />
@@ -127,12 +127,14 @@ section{padding:clamp(80px,12vw,160px) 0;position:relative;z-index:1}
 .logo-text{font-size:1rem}
 .logo-text span{color:var(--muted);font-weight:400;margin-left:6px;font-size:0.85rem}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;padding:8px 14px;font-size:0.9rem;border-radius:100px;transition:all 0.3s var(--ease)}
+.nav-links a{color:var(--muted);text-decoration:none;padding:8px 13px;font-size:0.86rem;border-radius:100px;transition:all 0.3s var(--ease);white-space:nowrap}
 .nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
 .nav-cta{display:flex;align-items:center;gap:12px}
 .nav-cta .btn{padding:10px 20px;font-size:0.85rem}
 .nav-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
-@media(max-width:900px){.nav-links{display:none}.nav-toggle{display:block}}
+@media(max-width:1100px){.nav-links{display:none}.nav-toggle{display:block}}
+.nav-links.mobile-open{display:flex;position:fixed;top:64px;left:16px;right:16px;flex-direction:column;align-items:stretch;background:rgba(8,8,8,0.97);border:1px solid var(--line-strong);border-radius:var(--radius-lg);padding:14px;gap:2px;backdrop-filter:blur(20px);max-height:75vh;overflow-y:auto}
+.nav-links.mobile-open a{padding:13px 16px;border-radius:var(--radius-sm)}
 
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -398,6 +400,100 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);position:relative;z-
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg);padding:8px 16px;z-index:1000;text-decoration:none;font-weight:500}
 .skip-link:focus{top:0}
+
+/* ===== Insight strip: Definition / Metric / Example / Impact — reused across sections ===== */
+.insight-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0 4px}
+@media(max-width:900px){.insight-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.insight-strip{grid-template-columns:1fr}}
+.insight-chip{padding:18px 20px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line);transition:border-color .3s var(--ease)}
+.insight-chip:hover{border-color:var(--line-strong)}
+.insight-chip .ic-label{font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block}
+.insight-chip p{font-size:0.84rem;color:var(--muted);line-height:1.55}
+
+/* ===== Featured / highlighted card modifier ===== */
+.card.featured{border-color:rgba(0,245,212,0.35);background:linear-gradient(180deg,rgba(0,245,212,0.07),rgba(255,255,255,0.01))}
+.card.featured::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* ===== Reputation scores ===== */
+.rep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+@media(max-width:900px){.rep-grid{grid-template-columns:1fr}}
+.rep-card{padding:28px}
+.rep-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.rep-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;color:var(--bg);flex-shrink:0}
+.rep-head strong{display:block;font-weight:500}
+.rep-head span{font-size:0.8rem;color:var(--dim)}
+.rep-row{margin-bottom:14px}
+.rep-row:last-child{margin-bottom:0}
+.rep-row-top{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted);margin-bottom:6px;font-family:var(--font-mono)}
+.rep-row-top b{color:var(--text);font-family:var(--font)}
+.rep-bar{height:6px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden}
+.rep-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* ===== Knowledge Extinction Tracker ===== */
+.extinct-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+@media(max-width:800px){.extinct-grid{grid-template-columns:1fr}}
+.extinct-card{padding:26px 28px;border-left:3px solid var(--line)}
+.extinct-card.critical{border-left-color:#FF6B6B}
+.extinct-card.high{border-left-color:var(--highlight)}
+.extinct-card.moderate{border-left-color:var(--accent-2)}
+.extinct-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.extinct-top h4{font-size:1.05rem}
+.urgency-tag{font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.urgency-tag.critical{background:rgba(255,107,107,0.12);color:#FF6B6B;border:1px solid rgba(255,107,107,0.3)}
+.urgency-tag.high{background:var(--highlight-soft);color:var(--highlight);border:1px solid rgba(249,199,79,0.3)}
+.urgency-tag.moderate{background:var(--accent-2-soft);color:var(--accent-2);border:1px solid rgba(108,99,255,0.3)}
+.risk-meter{height:8px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden;margin:14px 0 10px}
+.risk-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--accent-2),var(--highlight),#FF6B6B)}
+.extinct-meta{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.74rem;color:var(--dim)}
+.extinct-meta b{color:var(--text);font-family:var(--font)}
+
+/* ===== Preservation Risk Score calculator ===== */
+.risk-calc-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:0;position:relative;z-index:1}
+@media(max-width:800px){.risk-calc-grid{grid-template-columns:1fr}}
+.risk-field{margin-bottom:24px}
+.risk-field:last-child{margin-bottom:0}
+.risk-field-top{display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.85rem}
+.risk-field-top label{color:var(--muted);font-family:var(--font-mono);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em}
+.risk-field-top span{color:var(--accent);font-family:var(--font-mono)}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:100px;background:rgba(255,255,255,0.08);outline:none;cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(0,245,212,0.6);border:3px solid var(--bg);cursor:pointer}
+input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(0,245,212,0.6);border:3px solid var(--bg);cursor:pointer;border:3px solid var(--bg)}
+.risk-result{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px;border-left:1px solid var(--line)}
+@media(max-width:800px){.risk-result{border-left:none;border-top:1px solid var(--line);margin-top:32px;padding-top:36px}}
+.risk-gauge{width:180px;height:180px;border-radius:50%;display:grid;place-items:center;position:relative;margin-bottom:20px}
+.risk-gauge-inner{width:140px;height:140px;border-radius:50%;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.risk-gauge-inner .val{font-family:var(--font-mono);font-size:2.2rem;font-weight:700;color:var(--text)}
+.risk-gauge-inner .lbl{font-size:0.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px}
+.risk-verdict{font-size:1.05rem;font-weight:500;margin-bottom:6px}
+.risk-verdict-desc{font-size:0.85rem;color:var(--muted);max-width:260px}
+
+/* ===== Civilizational Intelligence Index ranking ===== */
+.cii-list{display:flex;flex-direction:column;gap:10px;margin-top:40px}
+.cii-row{display:grid;grid-template-columns:50px 1fr 90px;align-items:center;gap:18px;padding:16px 22px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line);transition:all .3s var(--ease)}
+.cii-row:hover{background:rgba(255,255,255,0.04);border-color:var(--line-strong)}
+.cii-row.top{border-color:rgba(0,245,212,0.3);background:rgba(0,245,212,0.04)}
+.cii-rank{font-family:var(--font-mono);font-size:1.1rem;color:var(--dim);font-weight:700}
+.cii-row.top .cii-rank{color:var(--accent)}
+.cii-name{display:flex;flex-direction:column;gap:8px}
+.cii-name strong{font-weight:500}
+.cii-bar-track{height:6px;border-radius:100px;background:rgba(255,255,255,0.06);overflow:hidden;max-width:380px}
+.cii-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.cii-score{font-family:var(--font-mono);font-size:1.1rem;color:var(--text);text-align:right}
+.cii-methodology{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cii-method-chip{font-family:var(--font-mono);font-size:0.72rem;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,0.03);border:1px solid var(--line);color:var(--muted)}
+
+/* ===== Knowledge GDP Engine ===== */
+.gdp-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;align-items:stretch}
+@media(max-width:800px){.gdp-hero{grid-template-columns:1fr}}
+.gdp-flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px}
+.gdp-flow-step{padding:14px 18px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line);font-size:0.85rem;text-align:center;min-width:120px}
+.gdp-flow-step b{display:block;color:var(--accent);font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.gdp-flow-arrow{color:var(--dim);font-size:1.2rem}
+
+/* ===== Footer credit ===== */
+.footer-credit{text-align:center;margin-top:24px;padding-top:24px;border-top:1px dashed var(--line);font-family:var(--font-mono);font-size:0.8rem;color:var(--dim);letter-spacing:0.04em}
+.footer-credit a{color:var(--accent);text-decoration:none}
+.footer-credit a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -417,18 +513,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       </div>
       <div class="logo-text">CKH<span>Protocol</span></div>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#blindspot">Blind Spot</a></li>
       <li><a href="#gap">The Gap</a></li>
       <li><a href="#theory">Theory</a></li>
       <li><a href="#protocol">Protocol</a></li>
       <li><a href="#taxonomy">Taxonomy</a></li>
       <li><a href="#dna">Knowledge DNA</a></li>
+      <li><a href="#constellation">Constellation</a></li>
+      <li><a href="#gdp">Knowledge GDP</a></li>
       <li><a href="#commons">Commons</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
     </ul>
     <div class="nav-cta">
       <a href="#entry" class="btn btn-primary">Start Harvesting <span class="arrow">→</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
@@ -444,7 +543,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   <div class="container hero-content">
     <span class="eyebrow">Citizen Knowledge Harvest · v1.0</span>
     <h1 id="hero-title">Humanity's <span class="gradient-text">Missing Knowledge</span> Ledger</h1>
-    <p class="hero-sub">Every day, billions of people observe, experiment, adapt, and solve problems. Most of that knowledge vanishes. CKH makes it <strong style="color:var(--text)">visible</strong>, <strong style="color:var(--text)">searchable</strong>, <strong style="color:var(--text)">citable</strong>, and <strong style="color:var(--text)">immortal</strong>.</p>
+    <p class="hero-sub">Civilization keeps two ledgers. One tracks money — audited, regulated, complete. The other tracks learning — the billions of daily observations, experiments, and adaptations that quietly built everything we have. It doesn't exist yet. CKH is building it: <strong style="color:var(--text)">visible</strong>, <strong style="color:var(--text)">searchable</strong>, <strong style="color:var(--text)">citable</strong>, and <strong style="color:var(--text)">immortal</strong>.</p>
     <div class="hero-cta">
       <a href="#entry" class="btn btn-primary">Start Harvesting Knowledge <span class="arrow">→</span></a>
       <a href="#commons" class="btn btn-ghost">Explore the Commons</a>
@@ -456,6 +555,47 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">Scroll</div>
+</section>
+
+<section id="blindspot" aria-labelledby="blindspot-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">00 · Humanity's Blind Spot</span>
+      <h2 id="blindspot-title">We track everything. Except <span class="gradient-text">how we learn</span></h2>
+      <p>Every modern institution exists to measure something. Money. Output. Population. Emissions. Yet the activity that makes all of those things improve over time — human learning — has no ledger, no registry, no infrastructure of its own.</p>
+    </div>
+    <div class="grid grid-4 reveal" style="margin-bottom:8px">
+      <div class="card" style="padding:22px;text-align:center"><h4 style="font-size:0.95rem;margin-bottom:4px">We track money</h4><p style="font-size:0.82rem">Central banks, ledgers, audits, GDP</p></div>
+      <div class="card" style="padding:22px;text-align:center"><h4 style="font-size:0.95rem;margin-bottom:4px">We track products</h4><p style="font-size:0.82rem">Supply chains, barcodes, patents</p></div>
+      <div class="card" style="padding:22px;text-align:center"><h4 style="font-size:0.95rem;margin-bottom:4px">We track populations</h4><p style="font-size:0.82rem">Census, registries, demographics</p></div>
+      <div class="card" style="padding:22px;text-align:center"><h4 style="font-size:0.95rem;margin-bottom:4px">We track emissions</h4><p style="font-size:0.82rem">Sensors, satellites, climate models</p></div>
+    </div>
+    <div class="gap-compare reveal">
+      <div class="gap-panel visible">
+        <span class="tag">LEDGER 1 · EXISTS</span>
+        <h3>The Financial Ledger</h3>
+        <ul class="gap-list">
+          <li>Every transaction recorded</li>
+          <li>Standardized units of account</li>
+          <li>Audited, regulated, trusted</li>
+          <li>Built over 600 years, since double-entry bookkeeping</li>
+          <li>Powers credit, trade, taxation, policy</li>
+        </ul>
+      </div>
+      <div class="gap-panel invisible">
+        <span class="tag">LEDGER 2 · MISSING</span>
+        <h3>The Knowledge Ledger</h3>
+        <ul class="gap-list">
+          <li>No transaction is recorded</li>
+          <li>No standardized unit of insight</li>
+          <li>Unaudited, unregulated, untrusted</li>
+          <li>Never systematically attempted, until now</li>
+          <li>Could power education, policy, and innovation</li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;max-width:700px;margin:40px auto 0;font-size:1.05rem">This is civilization's largest unaddressed information gap. <span style="color:var(--text);font-weight:500">CKH exists to close it.</span></p>
+  </div>
 </section>
 
 <section id="gap" aria-labelledby="gap-title">
@@ -503,6 +643,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <h2 id="theory-title">Two systems of <span class="gradient-text">human knowledge</span></h2>
       <p>Knowledge exists in parallel. One is celebrated, archived, and rewarded. The other is lived, lost, and forgotten. CKH bridges both.</p>
     </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A theory describing how legitimate, useful knowledge is continuously produced outside credentialed institutions, through lived practice rather than formal study.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Invisible-to-Visible Ratio — the estimated 1,300:1 gap between daily undocumented experiments and annual peer-reviewed papers.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A mechanic's ear for engine sound predicts failure days before any diagnostic tool — knowledge that exists nowhere but in practice.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Closing this gap could surface entire fields of applied science that institutions have never had access to.</p></div>
+    </div>
     <div class="split reveal">
       <div class="split-col visible">
         <span class="eyebrow" style="margin-bottom:16px">System A</span>
@@ -530,14 +676,52 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="asset" aria-labelledby="asset-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">03 · The Knowledge Asset Class</span>
+      <h2 id="asset-title">The largest <span class="gradient-text">unrecognized asset</span> in the world</h2>
+      <p>Economists measure three forms of capital. There is a fourth — larger than the other three combined — that has never been counted.</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card" style="padding:28px">
+        <div class="origin-node-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4>Physical Capital</h4>
+        <p style="font-size:0.88rem">Machines, buildings, infrastructure. Measured for centuries. Fully on the ledger.</p>
+      </div>
+      <div class="card" style="padding:28px">
+        <div class="origin-node-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h4>Financial Capital</h4>
+        <p style="font-size:0.88rem">Cash, credit, equity. Tracked to the cent, globally, in real time.</p>
+      </div>
+      <div class="card" style="padding:28px">
+        <div class="origin-node-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h4>Human Capital</h4>
+        <p style="font-size:0.88rem">Education, skills, credentials. Partially tracked through degrees and resumes.</p>
+      </div>
+      <div class="card featured" style="padding:28px">
+        <div class="origin-node-icon" aria-hidden="true" style="background:var(--accent);color:var(--bg)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h4>Knowledge Capital</h4>
+        <p style="font-size:0.88rem">Tacit expertise, adaptation, problem-solving. <strong style="color:var(--accent)">Almost entirely untracked.</strong></p>
+      </div>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>Knowledge capital is the stock of practical, undocumented intelligence held by individuals and communities — distinct from credentials, which only certify a fraction of it.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Knowledge GDP — the estimated economic value generated by knowledge that never entered a formal market or ledger.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>An informal trader's pricing intuition, built over a decade, outperforms textbook models — yet appears on no balance sheet anywhere.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Recognizing knowledge capital could redirect investment, policy, and education toward where real expertise already lives.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="protocol" aria-labelledby="protocol-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">03 · The Protocol</span>
+      <span class="eyebrow">04 · The Protocol</span>
       <h2 id="protocol-title">Eight stages from <span class="gradient-text">observation to preservation</span></h2>
       <p>CKH is not a platform. It is a protocol — a structured pathway that transforms fleeting insight into permanent civilizational memory.</p>
     </div>
-    <div class="protocol-flow reveal" role="tablist">
+    <div class="protocol-flow reveal" id="protocolFlow" role="tablist">
       <div class="protocol-step active" data-step="0" role="tab" tabindex="0"><div class="protocol-step-num">01</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Observe</h4><p>Notice a pattern</p></div>
       <div class="protocol-step" data-step="1" role="tab" tabindex="0"><div class="protocol-step-num">02</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></div><h4>Experiment</h4><p>Test a hypothesis</p></div>
       <div class="protocol-step" data-step="2" role="tab" tabindex="0"><div class="protocol-step-num">03</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></div><h4>Adapt</h4><p>Refine the approach</p></div>
@@ -557,7 +741,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section id="entry" aria-labelledby="entry-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">04 · Micro Entry Engine</span>
+      <span class="eyebrow">05 · Micro Entry Engine</span>
       <h2 id="entry-title">Document an insight in <span class="gradient-text">under 60 seconds</span></h2>
       <p>Every contribution begins with a single entry. Small, structured, and designed to capture knowledge before it evaporates.</p>
     </div>
@@ -612,9 +796,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section id="origin" aria-labelledby="origin-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">05 · Knowledge Origin Engine</span>
+      <span class="eyebrow">06 · Knowledge Origin Engine</span>
       <h2 id="origin-title">Nine pathways through which <span class="gradient-text">knowledge is born</span></h2>
       <p>Every insight has a genesis. CKH classifies the origin of knowledge to map the ecology of human discovery.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>The Origin Engine classifies how each entry came into being — the cognitive or social pathway that produced it.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Origin Distribution — the share of entries attributable to each of nine pathways, updated as the commons grows.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A street vendor's pricing rule, born from Necessity, later proves transferable to vendors three countries away.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Origin data reveals which conditions most reliably produce useful knowledge — guiding where to invest in capture infrastructure.</p></div>
     </div>
     <div class="origin-grid reveal">
       <div class="origin-node"><div class="pct">28%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Observation</h4><p>Noticing patterns in the world through careful attention.</p></div>
@@ -633,9 +823,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 <section id="provenance" aria-labelledby="prov-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">06 · Knowledge Provenance Index</span>
+      <span class="eyebrow">07 · Knowledge Provenance Index</span>
       <h2 id="prov-title">A new metric for <span class="gradient-text">knowledge maturity</span></h2>
       <p>Every piece of knowledge carries a history. The Provenance Index traces its journey from raw observation to community-validated asset.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A five-letter maturity code (O-E-A-R-C) showing exactly how far a piece of knowledge has progressed toward verified, citable status.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Maturity Score, 1–5, computed from how many provenance stages an entry has cleared.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A flood-adaptation technique moves from O (one farmer's observation) to C in fourteen months after replication across three districts.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Gives policymakers a trust signal for informal knowledge equivalent to peer review — without the multi-year delay.</p></div>
     </div>
     <div class="provenance-wrap reveal">
       <div class="provenance-stages">
@@ -655,23 +851,131 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="reputation" aria-labelledby="rep-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">08 · Knowledge Reputation System</span>
+      <h2 id="rep-title">Trust earned through <span class="gradient-text">usefulness, not status</span></h2>
+      <p>No followers. No likes. CKH replaces social popularity with five scores that measure whether a contributor's knowledge actually helps people.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A reputation built entirely from what knowledge does after publication — never from audience size or engagement.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Five component scores — Replication, Validation, Impact, Transferability, Preservation — each 0–100.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A midwife with twelve followers ranks above an influencer with twelve thousand, because her technique was replicated in nine clinics.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Redirects social capital toward people who solve real problems — a quiet correction to attention-economy incentives.</p></div>
+    </div>
+    <div class="rep-grid reveal">
+      <div class="card rep-card">
+        <div class="rep-head"><div class="rep-avatar">RK</div><div><strong>Rina K. — Soil Practitioner</strong><span>148 entries · Rural Maharashtra</span></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Replication Score</span><b>92</b></div><div class="rep-bar"><div class="rep-fill" style="width:92%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Validation Score</span><b>87</b></div><div class="rep-bar"><div class="rep-fill" style="width:87%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Impact Score</span><b>78</b></div><div class="rep-bar"><div class="rep-fill" style="width:78%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Transferability</span><b>81</b></div><div class="rep-bar"><div class="rep-fill" style="width:81%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Preservation</span><b>69</b></div><div class="rep-bar"><div class="rep-fill" style="width:69%"></div></div></div>
+      </div>
+      <div class="card rep-card">
+        <div class="rep-head"><div class="rep-avatar">JM</div><div><strong>Joaquín M. — Diesel Mechanic</strong><span>302 entries · Lima, Peru</span></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Replication Score</span><b>74</b></div><div class="rep-bar"><div class="rep-fill" style="width:74%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Validation Score</span><b>95</b></div><div class="rep-bar"><div class="rep-fill" style="width:95%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Impact Score</span><b>88</b></div><div class="rep-bar"><div class="rep-fill" style="width:88%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Transferability</span><b>66</b></div><div class="rep-bar"><div class="rep-fill" style="width:66%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Preservation</span><b>71</b></div><div class="rep-bar"><div class="rep-fill" style="width:71%"></div></div></div>
+      </div>
+      <div class="card rep-card">
+        <div class="rep-head"><div class="rep-avatar">AO</div><div><strong>Amara O. — Community Midwife</strong><span>96 entries · Lagos, Nigeria</span></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Replication Score</span><b>97</b></div><div class="rep-bar"><div class="rep-fill" style="width:97%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Validation Score</span><b>91</b></div><div class="rep-bar"><div class="rep-fill" style="width:91%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Impact Score</span><b>96</b></div><div class="rep-bar"><div class="rep-fill" style="width:96%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Transferability</span><b>84</b></div><div class="rep-bar"><div class="rep-fill" style="width:84%"></div></div></div>
+        <div class="rep-row"><div class="rep-row-top"><span>Preservation</span><b>89</b></div><div class="rep-bar"><div class="rep-fill" style="width:89%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="taxonomy" aria-labelledby="tax-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">07 · The Kallool Taxonomy</span>
+      <span class="eyebrow">09 · The Kallool Taxonomy</span>
       <h2 id="tax-title">Ten domains of <span class="gradient-text">everyday genius</span></h2>
       <p>A classification system for the invisible knowledge that sustains civilizations. Each domain holds a universe of undocumented wisdom.</p>
     </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A ten-domain classification spanning the practical fields where humans most often generate knowledge nobody writes down.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Entries per Domain — the running count of contributions tagged to each of the ten taxonomy categories.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>Household Adaptive Intelligence is the single largest domain — over 214,000 entries on parenting, nutrition, and daily logistics.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>A shared taxonomy lets knowledge from unrelated regions be compared, merged, and cross-applied for the first time.</p></div>
+    </div>
     <div class="taxonomy reveal" id="taxonomyGrid"></div>
+  </div>
+</section>
+
+<section id="extinction" aria-labelledby="ext-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">10 · Knowledge Extinction Tracker · The Extinction of Experience</span>
+      <h2 id="ext-title">Knowledge dies the same way <span class="gradient-text">species do</span></h2>
+      <p>When the last practitioner of a technique passes without passing it on, that knowledge is gone — permanently, the way a species is gone. CKH tracks this loss with the same urgency conservation tracks biodiversity.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A live risk register for knowledge systems whose last carriers are aging out faster than the knowledge is being documented.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Knowledge Risk Score (0–100), combining carrier age, documentation rate, and successor count into an estimated Time to Loss.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>Stepwell water-management knowledge in parts of Rajasthan is held by fewer than 40 practitioners, average age 67.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Every documented system here is one less entry in a future "knowledge extinction" record nobody wanted to write.</p></div>
+    </div>
+    <div class="extinct-grid reveal">
+      <div class="extinct-card critical">
+        <div class="extinct-top"><h4>Traditional Stepwell Irrigation</h4><span class="urgency-tag critical">Critical</span></div>
+        <p style="font-size:0.88rem">Centuries-old gravity-fed water systems for arid regions, understood fully by a shrinking circle of elder engineers.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:91%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>91/100</b></span><span>Est. loss · <b>~6 yrs</b></span></div>
+      </div>
+      <div class="extinct-card critical">
+        <div class="extinct-top"><h4>Indigenous Repair Knowledge</h4><span class="urgency-tag critical">Critical</span></div>
+        <p style="font-size:0.88rem">Tool and equipment repair techniques using only local materials, displaced by disposable manufactured goods.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:87%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>87/100</b></span><span>Est. loss · <b>~8 yrs</b></span></div>
+      </div>
+      <div class="extinct-card high">
+        <div class="extinct-top"><h4>Artisan Natural-Dye Methods</h4><span class="urgency-tag high">High</span></div>
+        <p style="font-size:0.88rem">Plant- and mineral-based textile dyeing, replaced almost entirely by synthetic industrial dyes in two generations.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:74%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>74/100</b></span><span>Est. loss · <b>~14 yrs</b></span></div>
+      </div>
+      <div class="extinct-card high">
+        <div class="extinct-top"><h4>Local Ecological Forecasting</h4><span class="urgency-tag high">High</span></div>
+        <p style="font-size:0.88rem">Reading wind, cloud, and animal behavior to predict weather, still practiced by aging coastal and farming communities.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:68%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>68/100</b></span><span>Est. loss · <b>~17 yrs</b></span></div>
+      </div>
+      <div class="extinct-card moderate">
+        <div class="extinct-top"><h4>Oral Genealogical Record-Keeping</h4><span class="urgency-tag moderate">Moderate</span></div>
+        <p style="font-size:0.88rem">Memorized multi-generational family and land histories, partially sustained through ceremony and storytelling.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:52%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>52/100</b></span><span>Est. loss · <b>~25 yrs</b></span></div>
+      </div>
+      <div class="extinct-card moderate">
+        <div class="extinct-top"><h4>Intergenerational Craft Apprenticeship</h4><span class="urgency-tag moderate">Moderate</span></div>
+        <p style="font-size:0.88rem">Hands-on transmission of pottery, metalwork, and weaving, slowed but not yet broken by urban migration.</p>
+        <div class="risk-meter"><div class="risk-fill" style="width:46%"></div></div>
+        <div class="extinct-meta"><span>Risk Score · <b>46/100</b></span><span>Est. loss · <b>~30 yrs</b></span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="dna" aria-labelledby="dna-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">08 · Knowledge DNA</span>
+      <span class="eyebrow">11 · Knowledge DNA</span>
       <h2 id="dna-title">Every insight has a <span class="gradient-text">unique genome</span></h2>
       <p>Knowledge is not flat. Each contribution carries a genetic signature — seven components that define its character, potential, and lifespan.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A seven-component signature attached to every entry, describing its origin, strength, and likely trajectory through the commons.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Composite DNA Score — a weighted blend of Novelty, Evidence, and Community Adoption components.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A high-Novelty, low-Adoption entry signals an idea ahead of its community — a candidate for active outreach, not neglect.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Gives curators a consistent way to triage millions of entries without flattening their individuality into a single score.</p></div>
     </div>
     <div class="dna-wrap reveal">
       <div class="dna-viz">
@@ -707,12 +1011,61 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="risk" aria-labelledby="risk-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">12 · Knowledge Preservation Risk Score</span>
+      <h2 id="risk-title">Predicting <span class="gradient-text">what we're about to lose</span></h2>
+      <p>A live calculator. Adjust the inputs for any piece of knowledge and watch its preservation risk update in real time — the same logic that powers the Extinction Tracker above.</p>
+    </div>
+    <div class="card reveal" style="max-width:980px;margin:40px auto 0;padding:44px;position:relative;overflow:hidden">
+      <div class="risk-calc-grid">
+        <div>
+          <div class="risk-field">
+            <div class="risk-field-top"><label for="r-age">Avg. Contributor Age</label><span id="r-age-val">55</span></div>
+            <input type="range" id="r-age" min="18" max="90" value="55">
+          </div>
+          <div class="risk-field">
+            <div class="risk-field-top"><label for="r-doc">Documentation Quality</label><span id="r-doc-val">40%</span></div>
+            <input type="range" id="r-doc" min="0" max="100" value="40">
+          </div>
+          <div class="risk-field">
+            <div class="risk-field-top"><label for="r-rep">Replication Count</label><span id="r-rep-val">2</span></div>
+            <input type="range" id="r-rep" min="0" max="20" value="2">
+          </div>
+          <div class="risk-field">
+            <div class="risk-field-top"><label for="r-adopt">Community Adoption</label><span id="r-adopt-val">30%</span></div>
+            <input type="range" id="r-adopt" min="0" max="100" value="30">
+          </div>
+          <div class="risk-field">
+            <div class="risk-field-top"><label for="r-digital">Digital Preservation</label><span id="r-digital-val">15%</span></div>
+            <input type="range" id="r-digital" min="0" max="100" value="15">
+          </div>
+        </div>
+        <div class="risk-result">
+          <div class="risk-gauge" id="riskGaugeOuter" style="background:conic-gradient(var(--accent) 0deg, var(--accent) 270deg, rgba(255,255,255,0.08) 270deg)">
+            <div class="risk-gauge-inner"><span class="val" id="riskGaugeVal">75</span><span class="lbl">Risk / 100</span></div>
+          </div>
+          <div class="risk-verdict" id="riskVerdict" style="color:#FF6B6B">Critical — act now</div>
+          <p class="risk-verdict-desc" id="riskVerdictDesc">High contributor age and low documentation mean this knowledge could vanish within a single generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="memory" aria-labelledby="mem-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">09 · Civilizational Memory Engine</span>
+      <span class="eyebrow">13 · Civilizational Memory Engine</span>
       <h2 id="mem-title">From a single insight to <span class="gradient-text">global heritage</span></h2>
       <p>Knowledge travels. A farmer's discovery becomes a village's practice, a district's standard, a nation's policy, and finally, humanity's inheritance.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>A model of how a single piece of knowledge scales outward through concentric circles of human community.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Reach Multiplier — the population scale an entry has reached, from 1 contributor to 8.2B potential beneficiaries.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A single composting method documented by one farmer in 2019 is now district policy across four states.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>Makes visible the compounding value of capturing knowledge early — before it has the chance to travel at all.</p></div>
     </div>
     <div class="memory-timeline reveal">
       <div class="memory-stages" id="memoryStages">
@@ -726,12 +1079,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="timemachine" aria-labelledby="tm-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">14 · The Knowledge Time Machine</span>
+      <h2 id="tm-title">One observation, <span class="gradient-text">fifty-four years</span> of consequence</h2>
+      <p>Follow a single 2026 field note as it compounds across decades — the same way a small interest payment compounds into real wealth.</p>
+    </div>
+    <div class="memory-timeline reveal">
+      <div class="memory-stages" id="tmStages">
+        <div class="memory-stage active" data-stage="0"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="memory-label">2026</div><div class="memory-meta">Farmer observation</div></div>
+        <div class="memory-stage" data-stage="1"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="memory-label">2028</div><div class="memory-meta">Village adoption</div></div>
+        <div class="memory-stage" data-stage="2"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></div><div class="memory-label">2032</div><div class="memory-meta">Regional scaling</div></div>
+        <div class="memory-stage" data-stage="3"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/></svg></div><div class="memory-label">2040</div><div class="memory-meta">Research citation</div></div>
+        <div class="memory-stage" data-stage="4"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="memory-label">2055</div><div class="memory-meta">Educational curriculum</div></div>
+        <div class="memory-stage" data-stage="5"><div class="memory-node"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div class="memory-label">2080</div><div class="memory-meta">Historical archive</div></div>
+      </div>
+    </div>
+    <p class="reveal" style="text-align:center;max-width:680px;margin:36px auto 0;font-size:0.98rem">Without capture, this entire arc collapses to a single sentence: <em style="color:var(--highlight);font-style:normal">"an old farmer used to do something with the soil."</em></p>
+  </div>
+</section>
+
 <section id="lineage" aria-labelledby="lin-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">10 · Knowledge Lineage Network</span>
+      <span class="eyebrow">15 · Knowledge Lineage Network & Explorer</span>
       <h2 id="lin-title">Tracing the <span class="gradient-text">ancestry of ideas</span></h2>
-      <p>Every insight has parents. CKH maps how ideas are created, adapted, reused, cited, and ultimately shape policy — revealing the true genealogy of human progress.</p>
+      <p>Every insight has parents. CKH maps how ideas are created, adapted, reused, cited, and ultimately shape policy — revealing the true genealogy of human progress, the way a commit history reveals the genealogy of code.</p>
     </div>
     <div class="network-wrap reveal">
       <canvas id="networkCanvas" aria-hidden="true"></canvas>
@@ -742,15 +1116,61 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="network-legend-item"><div class="network-legend-dot" style="background:#FF6B9D"></div>Policy Impact</div>
       </div>
     </div>
+
+    <div style="margin-top:64px">
+      <h3 style="text-align:center;margin-bottom:8px">The Lineage Explorer</h3>
+      <p style="text-align:center;max-width:620px;margin:0 auto">Click through the six stages a single idea passes on its way from someone's private notice to a line in public policy.</p>
+      <div class="protocol-flow reveal" id="lineageFlow" role="tablist" style="grid-template-columns:repeat(6,1fr);margin-top:36px">
+        <div class="protocol-step active" data-lstep="0" role="tab" tabindex="0"><div class="protocol-step-num">01</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Observation</h4><p>One person notices</p></div>
+        <div class="protocol-step" data-lstep="1" role="tab" tabindex="0"><div class="protocol-step-num">02</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></div><h4>Adaptation</h4><p>A neighbor modifies it</p></div>
+        <div class="protocol-step" data-lstep="2" role="tab" tabindex="0"><div class="protocol-step-num">03</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><h4>Replication</h4><p>Reproduced elsewhere</p></div>
+        <div class="protocol-step" data-lstep="3" role="tab" tabindex="0"><div class="protocol-step-num">04</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h4>Community Adoption</h4><p>Becomes local norm</p></div>
+        <div class="protocol-step" data-lstep="4" role="tab" tabindex="0"><div class="protocol-step-num">05</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Institutional Recognition</h4><p>Cited by researchers</p></div>
+        <div class="protocol-step" data-lstep="5" role="tab" tabindex="0"><div class="protocol-step-num">06</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><h4>Policy Influence</h4><p>Shapes formal rules</p></div>
+      </div>
+      <div class="protocol-detail reveal" id="lineageDetail">
+        <h3>01 · Observation</h3>
+        <p>A rice farmer near Cuttack notices that staggering planting by nine days across adjoining plots reduces total pest damage. She tells two neighbors. Nothing is written down — yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="constellation" aria-labelledby="const-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">16 · Knowledge Constellation Map</span>
+      <h2 id="const-title">Knowledge as a <span class="gradient-text">living galaxy</span></h2>
+      <p>Eight domains of human expertise, each a cluster of stars. Watch how a discovery in one field quietly lights up another — agriculture informing environment, craft informing entrepreneurship.</p>
+    </div>
+    <div class="network-wrap reveal" style="background:radial-gradient(ellipse at center,rgba(0,245,212,0.05),transparent 70%)">
+      <canvas id="galaxyCanvas" aria-hidden="true"></canvas>
+      <div class="network-legend" id="galaxyLegend">
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#00F5D4"></div>Agriculture</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#6C63FF"></div>Mechanics</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#F9C74F"></div>Craft</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#FF6B9D"></div>Parenting</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#4ADE80"></div>Health</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#60A5FA"></div>Environment</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#FB923C"></div>Entrepreneurship</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#C084FC"></div>Community Resilience</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="commons" aria-labelledby="com-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">11 · Global Knowledge Commons</span>
+      <span class="eyebrow">17 · Global Knowledge Commons</span>
       <h2 id="com-title">A living map of <span class="gradient-text">humanity's mind</span></h2>
       <p>Every second, somewhere on Earth, someone is learning something that could help everyone else. CKH makes this invisible activity visible.</p>
+    </div>
+    <div class="insight-strip reveal">
+      <div class="insight-chip"><span class="ic-label">Definition</span><p>The open, global repository where every validated entry lives — free to read, cite, and build upon, by anyone, forever.</p></div>
+      <div class="insight-chip"><span class="ic-label">Metric</span><p>Active Contributors and Entries Today — live counters tracking the heartbeat of the commons in real time.</p></div>
+      <div class="insight-chip"><span class="ic-label">Real Example</span><p>A flood-adaptation protocol logged in Dhaka was cited and adapted in Jakarta nine days later.</p></div>
+      <div class="insight-chip"><span class="ic-label">Civilizational Impact</span><p>The first knowledge infrastructure with no institutional gatekeeper — open the way the early internet was open.</p></div>
     </div>
     <div class="commons-wrap reveal">
       <canvas id="worldCanvas" aria-hidden="true"></canvas>
@@ -767,10 +1187,53 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="gdp" aria-labelledby="gdp-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">18 · Knowledge GDP Engine · The Economy of Unrecorded Intelligence</span>
+      <h2 id="gdp-title">The economy <span class="gradient-text">no statistic measures</span></h2>
+      <p>Gross Domestic Product counts what is sold. It has never counted what is learned. The Knowledge GDP Engine is a first attempt at putting a number on the second economy.</p>
+    </div>
+    <div class="gdp-hero reveal">
+      <div class="gap-panel invisible" style="padding:36px">
+        <span class="tag">CKH ESTIMATE</span>
+        <h3>Knowledge GDP, 2026</h3>
+        <div class="gap-stat" style="color:var(--accent-2)">$2.4T</div>
+        <div class="gap-stat-label">Estimated value of undocumented knowledge produced this year, in USD equivalent</div>
+        <p style="font-size:0.85rem">Modeled from replication rates, time saved, and downstream commercial outcomes traceable to CKH-logged entries.</p>
+      </div>
+      <div class="card" style="padding:36px">
+        <h3 style="margin-bottom:18px">How it's modeled</h3>
+        <div class="insight-strip" style="grid-template-columns:1fr;margin:0">
+          <div class="insight-chip"><span class="ic-label">Definition</span><p>Knowledge GDP estimates the economic value of learning that never passed through a formal market transaction.</p></div>
+          <div class="insight-chip"><span class="ic-label">Metric</span><p>Five inputs: Knowledge Produced, Preserved, Replicated, Adopted, and Commercialized.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="impact-grid reveal">
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="impact-value" data-counter="24831294">0</div><div class="impact-label">Knowledge Produced</div><div class="impact-trend">↑ 12.4% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div class="impact-value" data-counter="9847291">0</div><div class="impact-label">Knowledge Preserved</div><div class="impact-trend">↑ 23.1% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="impact-value" data-counter="412847">0</div><div class="impact-label">Knowledge Replicated</div><div class="impact-trend">↑ 15.8% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="impact-value" data-counter="184729">0</div><div class="impact-label">Knowledge Adopted</div><div class="impact-trend">↑ 8.7% this month</div></div>
+    </div>
+    <div class="gdp-flow reveal">
+      <div class="gdp-flow-step"><b>Produced</b>24.8M entries</div>
+      <div class="gdp-flow-arrow">→</div>
+      <div class="gdp-flow-step"><b>Preserved</b>9.8M archived</div>
+      <div class="gdp-flow-arrow">→</div>
+      <div class="gdp-flow-step"><b>Replicated</b>412K tested</div>
+      <div class="gdp-flow-arrow">→</div>
+      <div class="gdp-flow-step"><b>Adopted</b>184K communities</div>
+      <div class="gdp-flow-arrow">→</div>
+      <div class="gdp-flow-step"><b>Commercialized</b>3,847 ventures</div>
+    </div>
+  </div>
+</section>
+
 <section id="impact" aria-labelledby="imp-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">12 · Impact Dashboard</span>
+      <span class="eyebrow">19 · Impact Dashboard</span>
       <h2 id="imp-title">Measuring what <span class="gradient-text">matters most</span></h2>
       <p>Not GDP. Not citations. New metrics for a new kind of wealth — the wealth of shared human understanding.</p>
     </div>
@@ -787,12 +1250,73 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   </div>
 </section>
 
+<section id="cii" aria-labelledby="cii-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">20 · Civilizational Intelligence Index</span>
+      <h2 id="cii-title">Ranking humanity's capacity to <span class="gradient-text">learn and remember</span></h2>
+      <p>A composite index, scored 0–100, measuring how well a region produces, preserves, and circulates its own knowledge — the knowledge-era counterpart to GDP per capita.</p>
+    </div>
+    <div class="cii-list reveal">
+      <div class="cii-row top"><div class="cii-rank">01</div><div class="cii-name"><strong>South India Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:91%"></div></div></div><div class="cii-score">91.2</div></div>
+      <div class="cii-row top"><div class="cii-rank">02</div><div class="cii-name"><strong>East Africa Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:88%"></div></div></div><div class="cii-score">88.4</div></div>
+      <div class="cii-row top"><div class="cii-rank">03</div><div class="cii-name"><strong>Andean Region</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:85%"></div></div></div><div class="cii-score">85.6</div></div>
+      <div class="cii-row"><div class="cii-rank">04</div><div class="cii-name"><strong>Southeast Asia Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:82%"></div></div></div><div class="cii-score">82.1</div></div>
+      <div class="cii-row"><div class="cii-rank">05</div><div class="cii-name"><strong>Nordic Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:79%"></div></div></div><div class="cii-score">79.8</div></div>
+      <div class="cii-row"><div class="cii-rank">06</div><div class="cii-name"><strong>West Africa Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:76%"></div></div></div><div class="cii-score">76.3</div></div>
+      <div class="cii-row"><div class="cii-rank">07</div><div class="cii-name"><strong>Mesoamerica Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:73%"></div></div></div><div class="cii-score">73.5</div></div>
+      <div class="cii-row"><div class="cii-rank">08</div><div class="cii-name"><strong>Central Europe Cluster</strong><div class="cii-bar-track"><div class="cii-bar-fill" style="width:70%"></div></div></div><div class="cii-score">70.9</div></div>
+    </div>
+    <div class="cii-methodology reveal">
+      <span class="cii-method-chip">Knowledge Diversity · 20%</span>
+      <span class="cii-method-chip">Knowledge Preservation · 20%</span>
+      <span class="cii-method-chip">Knowledge Accessibility · 20%</span>
+      <span class="cii-method-chip">Knowledge Replication · 20%</span>
+      <span class="cii-method-chip">Knowledge Collaboration · 20%</span>
+    </div>
+  </div>
+</section>
+
+<section id="jandhan" aria-labelledby="jd-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">21 · The Jan Dhan of Knowledge</span>
+      <h2 id="jd-title">Financial inclusion <span class="gradient-text">had its moment</span>. Knowledge inclusion is next</h2>
+      <p>A decade ago, hundreds of millions of people gained their first bank account through national financial-inclusion programs. CKH proposes the same leap for knowledge: a public account every citizen owns by default.</p>
+    </div>
+    <div class="split reveal">
+      <div class="split-col visible">
+        <span class="eyebrow" style="margin-bottom:16px">Precedent</span>
+        <h3>Financial Inclusion</h3>
+        <p>Public infrastructure that gave ordinary citizens, for the first time, a formal stake in the financial system.</p>
+        <div class="split-items">
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="split-item-text"><strong>Universal Bank Accounts</strong><span>A formal financial identity for every citizen</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="split-item-text"><strong>Direct Transfers</strong><span>Value moved instantly, without intermediaries</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div><div class="split-item-text"><strong>Credit History</strong><span>A trusted, portable record of trustworthiness</span></div></div>
+        </div>
+      </div>
+      <div class="split-col invisible">
+        <span class="eyebrow" style="margin-bottom:16px;color:var(--accent-2);background:var(--accent-2-soft);border-color:rgba(108,99,255,0.25)">Proposal</span>
+        <h3>Knowledge Inclusion</h3>
+        <p>The same architecture, applied to what people know rather than what they own.</p>
+        <div class="split-items">
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div><div class="split-item-text"><strong>Knowledge Identity</strong><span>One persistent identity for every contributor</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div class="split-item-text"><strong>Knowledge Wallet</strong><span>A personal store of every entry a person has made</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="split-item-text"><strong>Knowledge Ledger</strong><span>A permanent, append-only public record</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg></div><div class="split-item-text"><strong>Knowledge Reputation</strong><span>Earned trust, portable across institutions</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div class="split-item-text"><strong>Knowledge Archive</strong><span>Inherited by family, community, or successors</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="future" aria-labelledby="fut-title">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">13 · The Future Layer</span>
+      <span class="eyebrow">22 · Knowledge Futures, 2050–2100</span>
       <h2 id="fut-title">Building the <span class="gradient-text">infrastructure of tomorrow</span></h2>
-      <p>CKH is not a destination. It is a foundation. Upon it, we will build systems that redefine how humanity values, distributes, and evolves knowledge.</p>
+      <p>CKH is not a destination. It is a foundation. Upon it, we will build systems that redefine how humanity values, distributes, and evolves knowledge — realistic extensions of what's already underway, not science fiction.</p>
     </div>
     <div class="future-grid reveal">
       <div class="future-card"><div class="future-num">F · 01</div><h4>AI Knowledge Curators</h4><p>Autonomous agents that surface, connect, and translate knowledge across languages and domains.</p></div>
@@ -801,8 +1325,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="future-card"><div class="future-num">F · 04</div><h4>Micro-Royalties</h4><p>Automated, perpetual attribution payments flowing back to originators every time their insight is used.</p></div>
       <div class="future-card"><div class="future-num">F · 05</div><h4>Citizen DOI System</h4><p>A universal Digital Object Identifier for every human insight — making informal knowledge formally citable.</p></div>
       <div class="future-card"><div class="future-num">F · 06</div><h4>Global Knowledge Infrastructure</h4><p>A public utility layer for knowledge, as essential as roads, water, and electricity.</p></div>
-      <div class="future-card"><div class="future-num">F · 07</div><h4>Knowledge GDP</h4><p>A new macroeconomic metric measuring the productive intellectual output of entire populations.</p></div>
-      <div class="future-card"><div class="future-num">F · 08</div><h4>Civilizational Intelligence Index</h4><p>A composite measure of humanity's collective capacity to learn, remember, and apply what it knows.</p></div>
+      <div class="future-card"><div class="future-num">F · 07</div><h4>Civilizational Memory Clouds</h4><p>Redundant, distributed archives that make the loss of any single server irrelevant to the survival of the record.</p></div>
+      <div class="future-card"><div class="future-num">F · 08</div><h4>Knowledge Preservation Satellites</h4><p>Off-planet, long-duration archival nodes designed to outlast any single nation's infrastructure or institutions.</p></div>
+      <div class="future-card"><div class="future-num">F · 09</div><h4>Intergenerational Knowledge Archives</h4><p>Vaults indexed by family and lineage, so a grandchild can query everything a grandparent ever documented.</p></div>
+      <div class="future-card"><div class="future-num">F · 10</div><h4>Cross-Border Knowledge Treaties</h4><p>International agreements guaranteeing open access to the commons regardless of where knowledge originated.</p></div>
+      <div class="future-card"><div class="future-num">F · 11</div><h4>Knowledge GDP as Policy Input</h4><p>National budgets that weight investment in informal-knowledge capture alongside traditional R&D spending.</p></div>
+      <div class="future-card"><div class="future-num">F · 12</div><h4>Civilizational Intelligence Index, Global</h4><p>A standard reported alongside GDP and HDI — a measure of how well a society learns from itself.</p></div>
     </div>
   </div>
 </section>
@@ -811,7 +1339,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   <div class="container">
     <div class="manifesto reveal">
       <div class="manifesto-content">
-        <span class="eyebrow">14 · The Manifesto</span>
+        <span class="eyebrow">23 · The Manifesto</span>
         <h2 id="man-title" class="manifesto-quote">We are not merely <span class="hl">consumers</span> of knowledge.<br>We are <span class="hl">creators</span> of knowledge.</h2>
         <div class="manifesto-lines">
           <span>Every <em>observation</em> matters.</span>
@@ -851,25 +1379,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
           <li><a href="#provenance">Provenance Index</a></li>
           <li><a href="#dna">Knowledge DNA</a></li>
           <li><a href="#taxonomy">Kallool Taxonomy</a></li>
+          <li><a href="#reputation">Reputation System</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Commons</h5>
         <ul>
           <li><a href="#commons">Global Map</a></li>
+          <li><a href="#constellation">Constellation Map</a></li>
           <li><a href="#lineage">Lineage Network</a></li>
-          <li><a href="#impact">Impact Dashboard</a></li>
+          <li><a href="#extinction">Extinction Tracker</a></li>
           <li><a href="#memory">Memory Engine</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Principles</h5>
+        <h5>Infrastructure</h5>
         <ul>
-          <li><a href="#">Open Knowledge</a></li>
-          <li><a href="#">Attribution</a></li>
-          <li><a href="#">Transparency</a></li>
-          <li><a href="#">Decentralization</a></li>
-          <li><a href="#">Preservation</a></li>
+          <li><a href="#gdp">Knowledge GDP</a></li>
+          <li><a href="#cii">Intelligence Index</a></li>
+          <li><a href="#jandhan">Jan Dhan of Knowledge</a></li>
+          <li><a href="#future">Knowledge Futures</a></li>
         </ul>
       </div>
     </div>
@@ -883,17 +1412,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
         <span>Preservation</span>
       </div>
     </div>
+    <div class="footer-credit">Created by <a href="#top">Kallol Chakrabarti</a>, Global Independent Researcher.</div>
   </div>
 </footer>
 
 <script>
 /* ============================================================
-   NAV SCROLL
+   NAV SCROLL + MOBILE TOGGLE
    ============================================================ */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
+const navToggle = document.getElementById('navToggle');
+const navLinksEl = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinksEl.classList.toggle('mobile-open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinksEl.classList.remove('mobile-open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
 
 /* ============================================================
    HERO CANVAS — Knowledge Nodes Network
@@ -929,7 +1469,6 @@ window.addEventListener('scroll', () => {
 
   function draw(){
     ctx.clearRect(0, 0, w, h);
-    // connections
     for(let i = 0; i < nodes.length; i++){
       for(let j = i+1; j < nodes.length; j++){
         const dx = nodes[i].x - nodes[j].x;
@@ -946,11 +1485,9 @@ window.addEventListener('scroll', () => {
         }
       }
     }
-    // nodes
     nodes.forEach(n => {
       n.pulse += 0.02;
       const pr = n.r + Math.sin(n.pulse) * 0.4;
-      // glow
       const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pr * 8);
       grad.addColorStop(0, n.color + '40');
       grad.addColorStop(1, n.color + '00');
@@ -958,16 +1495,13 @@ window.addEventListener('scroll', () => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, pr * 8, 0, Math.PI * 2);
       ctx.fill();
-      // core
       ctx.fillStyle = n.color;
       ctx.beginPath();
       ctx.arc(n.x, n.y, pr, 0, Math.PI * 2);
       ctx.fill();
-      // move
       n.x += n.vx; n.y += n.vy;
       if(n.x < 0 || n.x > w) n.vx *= -1;
       if(n.y < 0 || n.y > h) n.vy *= -1;
-      // mouse repel
       const mdx = n.x - mouse.x;
       const mdy = n.y - mouse.y;
       const md = Math.sqrt(mdx*mdx + mdy*mdy);
@@ -1026,7 +1560,7 @@ const io = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, [data-counter]').forEach(el => io.observe(el));
 
 /* ============================================================
-   PROTOCOL FLOW
+   PROTOCOL FLOW (8 stages)
    ============================================================ */
 const protocolDetails = [
   {t:'01 · Observe', d:'The protocol begins with noticing. A farmer sees that one corner of the field yields better. A mechanic hears an unfamiliar sound. A parent discovers that a particular rhythm calms a child. Observation is the seed of all knowledge — and the most frequently lost.'},
@@ -1038,13 +1572,42 @@ const protocolDetails = [
   {t:'07 · Cite', d:'Every insight has ancestors. Citation creates lineage — a map of how ideas travel, transform, and compound across time and space.'},
   {t:'08 · Preserve', d:'The final act. Knowledge stored in permanent, distributed, open archives. Protected against forgetting. Available to generations unborn.'}
 ];
-document.querySelectorAll('.protocol-step').forEach(step => {
+document.querySelectorAll('#protocolFlow .protocol-step').forEach(step => {
   step.addEventListener('click', () => {
-    document.querySelectorAll('.protocol-step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('#protocolFlow .protocol-step').forEach(s => s.classList.remove('active'));
     step.classList.add('active');
     const idx = parseInt(step.dataset.step, 10);
     const detail = protocolDetails[idx];
     const el = document.getElementById('protocolDetail');
+    el.style.opacity = '0';
+    setTimeout(() => {
+      el.innerHTML = `<h3>${detail.t}</h3><p>${detail.d}</p>`;
+      el.style.opacity = '1';
+    }, 200);
+  });
+  step.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); step.click(); }
+  });
+});
+
+/* ============================================================
+   LINEAGE EXPLORER (6 stages, GitHub-style evolution)
+   ============================================================ */
+const lineageDetails = [
+  {t:'01 · Observation', d:"A rice farmer near Cuttack notices that staggering planting by nine days across adjoining plots reduces total pest damage. She tells two neighbors. Nothing is written down — yet."},
+  {t:'02 · Adaptation', d:"A neighboring farmer modifies the timing for his own soil type, extending the stagger to twelve days. The technique now exists in two slightly different forms — a fork, in version-control terms."},
+  {t:'03 · Replication', d:"A visiting agricultural extension worker logs the technique in CKH. Two unrelated farmers eighty kilometers away test it independently and report similar pest reduction, with provenance R reached."},
+  {t:'04 · Community Adoption', d:"Within eighteen months, staggered planting becomes the default practice across eleven villages in the district, spread entirely through farmer-to-farmer demonstration."},
+  {t:'05 · Institutional Recognition', d:"A regional agricultural research station cites the CKH entry in a field bulletin, crediting the originating farmer by name and provenance code."},
+  {t:'06 · Policy Influence', d:"The state's pest-management guidelines are revised to recommend staggered planting windows, with the original 2026 observation listed as the documented origin."}
+];
+document.querySelectorAll('#lineageFlow .protocol-step').forEach(step => {
+  step.addEventListener('click', () => {
+    document.querySelectorAll('#lineageFlow .protocol-step').forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+    const idx = parseInt(step.dataset.lstep, 10);
+    const detail = lineageDetails[idx];
+    const el = document.getElementById('lineageDetail');
     el.style.opacity = '0';
     setTimeout(() => {
       el.innerHTML = `<h3>${detail.t}</h3><p>${detail.d}</p>`;
@@ -1186,7 +1749,6 @@ taxonomyData.forEach(item => {
       const y2 = cy + Math.sin(angle + Math.PI) * r * 0.4;
       const z1 = Math.sin(angle);
       const z2 = Math.sin(angle + Math.PI);
-      // connecting rung
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       line.setAttribute('x1', x1); line.setAttribute('y1', y1);
       line.setAttribute('x2', x2); line.setAttribute('y2', y2);
@@ -1194,7 +1756,6 @@ taxonomyData.forEach(item => {
       line.setAttribute('stroke-width', '1');
       line.setAttribute('opacity', '0.3');
       helix.appendChild(line);
-      // nodes
       [{x:x1,y:y1,z:z1,c:colors[i%colors.length]},{x:x2,y:y2,z:z2,c:colors[(i+3)%colors.length]}].forEach(n => {
         const scale = 0.6 + (n.z + 1) * 0.4;
         const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -1212,16 +1773,75 @@ taxonomyData.forEach(item => {
 })();
 
 /* ============================================================
-   MEMORY TIMELINE AUTO-CYCLE
+   KNOWLEDGE PRESERVATION RISK SCORE CALCULATOR
    ============================================================ */
 (function(){
-  const stages = document.querySelectorAll('.memory-stage');
+  const ageI = document.getElementById('r-age'), docI = document.getElementById('r-doc'),
+        repI = document.getElementById('r-rep'), adoptI = document.getElementById('r-adopt'),
+        digI = document.getElementById('r-digital');
+  if(!ageI) return;
+  const ageV = document.getElementById('r-age-val'), docV = document.getElementById('r-doc-val'),
+        repV = document.getElementById('r-rep-val'), adoptV = document.getElementById('r-adopt-val'),
+        digV = document.getElementById('r-digital-val');
+  const gaugeOuter = document.getElementById('riskGaugeOuter');
+  const gaugeVal = document.getElementById('riskGaugeVal');
+  const verdict = document.getElementById('riskVerdict');
+  const verdictDesc = document.getElementById('riskVerdictDesc');
+
+  function compute(){
+    const age = parseInt(ageI.value,10), doc = parseInt(docI.value,10), rep = parseInt(repI.value,10),
+          adopt = parseInt(adoptI.value,10), dig = parseInt(digI.value,10);
+    ageV.textContent = age;
+    docV.textContent = doc + '%';
+    repV.textContent = rep;
+    adoptV.textContent = adopt + '%';
+    digV.textContent = dig + '%';
+
+    const ageRisk = ((age - 18) / (90 - 18)) * 100;
+    const docRisk = 100 - doc;
+    const repRisk = 100 - Math.min(rep, 20) / 20 * 100;
+    const adoptRisk = 100 - adopt;
+    const digRisk = 100 - dig;
+    const score = Math.round(ageRisk*0.25 + docRisk*0.20 + repRisk*0.20 + adoptRisk*0.20 + digRisk*0.15);
+
+    let color, label, desc;
+    if(score >= 75){ color = '#FF6B6B'; label = 'Critical — act now'; desc = 'High contributor age and low documentation mean this knowledge could vanish within a single generation.'; }
+    else if(score >= 50){ color = '#F9C74F'; label = 'High — prioritize capture'; desc = 'Without active outreach, this knowledge is likely to thin out before it is fully preserved.'; }
+    else if(score >= 25){ color = '#6C63FF'; label = 'Moderate — monitor'; desc = 'Some safeguards exist, but replication and digital backup remain incomplete.'; }
+    else { color = '#00F5D4'; label = 'Low — well preserved'; desc = 'Strong documentation, replication, and digital preservation make near-term loss unlikely.'; }
+
+    gaugeVal.textContent = score;
+    gaugeVal.style.color = color;
+    verdict.textContent = label;
+    verdict.style.color = color;
+    verdictDesc.textContent = desc;
+    gaugeOuter.style.background = `conic-gradient(${color} 0deg, ${color} ${score*3.6}deg, rgba(255,255,255,0.08) ${score*3.6}deg)`;
+  }
+  [ageI, docI, repI, adoptI, digI].forEach(i => i.addEventListener('input', compute));
+  compute();
+})();
+
+/* ============================================================
+   MEMORY TIMELINE + TIME MACHINE AUTO-CYCLE
+   ============================================================ */
+(function(){
+  const stages = document.querySelectorAll('#memoryStages .memory-stage');
   let idx = 0;
   setInterval(() => {
     stages.forEach(s => s.classList.remove('active'));
     idx = (idx + 1) % stages.length;
     stages[idx].classList.add('active');
   }, 2500);
+})();
+(function(){
+  const stages = document.querySelectorAll('#tmStages .memory-stage');
+  if(!stages.length) return;
+  let idx = 0;
+  setInterval(() => {
+    stages.forEach(s => s.classList.remove('active'));
+    idx = (idx + 1) % stages.length;
+    stages[idx].classList.add('active');
+  }, 2200);
 })();
 
 /* ============================================================
@@ -1267,7 +1887,6 @@ taxonomyData.forEach(item => {
 
   function draw(){
     ctx.clearRect(0, 0, w, h);
-    // edges
     edges.forEach(([i, j]) => {
       const a = nodes[i], b = nodes[j];
       const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
@@ -1280,7 +1899,6 @@ taxonomyData.forEach(item => {
       ctx.lineTo(b.x, b.y);
       ctx.stroke();
     });
-    // nodes
     nodes.forEach(n => {
       n.pulse += 0.03;
       const pr = n.r + Math.sin(n.pulse) * 0.5;
@@ -1308,6 +1926,112 @@ taxonomyData.forEach(item => {
 })();
 
 /* ============================================================
+   KNOWLEDGE CONSTELLATION MAP — galaxy of domain clusters
+   ============================================================ */
+(function(){
+  const canvas = document.getElementById('galaxyCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, clusters = [];
+  const clusterDefs = [
+    {name:'Agriculture', color:'#00F5D4', x:0.14, y:0.28},
+    {name:'Mechanics', color:'#6C63FF', x:0.40, y:0.14},
+    {name:'Craft', color:'#F9C74F', x:0.66, y:0.20},
+    {name:'Parenting', color:'#FF6B9D', x:0.87, y:0.38},
+    {name:'Health', color:'#4ADE80', x:0.80, y:0.68},
+    {name:'Environment', color:'#60A5FA', x:0.54, y:0.84},
+    {name:'Entrepreneurship', color:'#FB923C', x:0.24, y:0.76},
+    {name:'Community Resilience', color:'#C084FC', x:0.10, y:0.52}
+  ];
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initClusters();
+  }
+
+  function initClusters(){
+    clusters = clusterDefs.map(def => {
+      const cx = def.x * w, cy = def.y * h;
+      const satellites = [];
+      const count = 9;
+      for(let i = 0; i < count; i++){
+        satellites.push({
+          angle: Math.random() * Math.PI * 2,
+          radius: 26 + Math.random() * 46,
+          speed: (0.002 + Math.random() * 0.004) * (Math.random() < 0.5 ? 1 : -1),
+          r: Math.random() * 1.6 + 0.8
+        });
+      }
+      return {...def, cx, cy, satellites, pulse: Math.random() * Math.PI * 2};
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    // cross-cluster links (ring + a few cross connections)
+    for(let i = 0; i < clusters.length; i++){
+      const a = clusters[i];
+      const b = clusters[(i + 1) % clusters.length];
+      drawLink(a, b, 0.16);
+    }
+    for(let i = 0; i < clusters.length; i += 2){
+      const a = clusters[i];
+      const b = clusters[(i + 3) % clusters.length];
+      drawLink(a, b, 0.08);
+    }
+
+    clusters.forEach(c => {
+      c.pulse += 0.02;
+      // satellites
+      c.satellites.forEach(s => {
+        s.angle += s.speed;
+        const sx = c.cx + Math.cos(s.angle) * s.radius;
+        const sy = c.cy + Math.sin(s.angle) * s.radius * 0.55;
+        ctx.fillStyle = c.color;
+        ctx.globalAlpha = 0.55;
+        ctx.beginPath();
+        ctx.arc(sx, sy, s.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+      // cluster star
+      const pr = 6 + Math.sin(c.pulse) * 1.4;
+      const grad = ctx.createRadialGradient(c.cx, c.cy, 0, c.cx, c.cy, pr * 7);
+      grad.addColorStop(0, c.color + '55');
+      grad.addColorStop(1, c.color + '00');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(c.cx, c.cy, pr * 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = c.color;
+      ctx.beginPath();
+      ctx.arc(c.cx, c.cy, pr, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  function drawLink(a, b, alpha){
+    const grad = ctx.createLinearGradient(a.cx, a.cy, b.cx, b.cy);
+    grad.addColorStop(0, a.color + Math.round(alpha*255).toString(16).padStart(2,'0'));
+    grad.addColorStop(1, b.color + Math.round(alpha*255).toString(16).padStart(2,'0'));
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = 0.8;
+    ctx.beginPath();
+    ctx.moveTo(a.cx, a.cy);
+    ctx.lineTo(b.cx, b.cy);
+    ctx.stroke();
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+/* ============================================================
    WORLD MAP + LIVE FEED
    ============================================================ */
 (function(){
@@ -1316,19 +2040,12 @@ taxonomyData.forEach(item => {
   const ctx = canvas.getContext('2d');
   let w, h, points = [], pulses = [];
 
-  // Rough world map outline points (simplified continents)
   const continents = [
-    // North America
     [[0.12,0.28],[0.18,0.22],[0.25,0.25],[0.3,0.32],[0.28,0.42],[0.22,0.48],[0.18,0.52],[0.15,0.45],[0.12,0.38]],
-    // South America
     [[0.28,0.55],[0.32,0.58],[0.34,0.68],[0.32,0.78],[0.28,0.82],[0.26,0.72],[0.26,0.62]],
-    // Europe
     [[0.48,0.28],[0.52,0.25],[0.56,0.28],[0.55,0.35],[0.5,0.38],[0.47,0.35]],
-    // Africa
     [[0.48,0.42],[0.55,0.4],[0.6,0.48],[0.62,0.58],[0.58,0.7],[0.52,0.72],[0.48,0.62],[0.46,0.52]],
-    // Asia
     [[0.58,0.25],[0.7,0.22],[0.82,0.28],[0.85,0.38],[0.8,0.45],[0.72,0.48],[0.65,0.42],[0.6,0.35]],
-    // Australia
     [[0.8,0.62],[0.88,0.6],[0.92,0.66],[0.88,0.72],[0.82,0.7]]
   ];
 
@@ -1342,10 +2059,8 @@ taxonomyData.forEach(item => {
 
   function initPoints(){
     points = [];
-    // Generate points within continents
     for(let i = 0; i < 200; i++){
       const cont = continents[Math.floor(Math.random() * continents.length)];
-      // random point inside polygon (approximate via bounding + check)
       let x, y, inside = false, attempts = 0;
       while(!inside && attempts < 20){
         const minX = Math.min(...cont.map(p=>p[0]));
@@ -1399,7 +2114,6 @@ taxonomyData.forEach(item => {
   function draw(){
     ctx.clearRect(0, 0, w, h);
     drawMap();
-    // pulses
     pulses = pulses.filter(p => p.life > 0);
     pulses.forEach(p => {
       p.life -= 0.02;
@@ -1410,7 +2124,6 @@ taxonomyData.forEach(item => {
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.stroke();
     });
-    // points
     points.forEach(p => {
       p.pulse += 0.04;
       const pr = p.r + Math.sin(p.pulse) * 0.3;
@@ -1424,7 +2137,6 @@ taxonomyData.forEach(item => {
     requestAnimationFrame(draw);
   }
 
-  // Spawn pulses
   setInterval(() => {
     if(points.length){
       const p = points[Math.floor(Math.random() * points.length)];
@@ -1436,7 +2148,6 @@ taxonomyData.forEach(item => {
   resize();
   draw();
 
-  // Live feed
   const feed = document.getElementById('commonsFeed');
   const feedItems = [
     ['Rural India','Soil moisture technique shared'],
@@ -1462,7 +2173,6 @@ taxonomyData.forEach(item => {
     if(items.length > 5) items[0].remove();
   }, 2500);
 
-  // Stats counter
   const csContrib = document.getElementById('csContrib');
   const csEntries = document.getElementById('csEntries');
   setInterval(() => {
