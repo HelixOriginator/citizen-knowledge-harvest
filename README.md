@@ -1,323 +1,329 @@
-# Citizen Knowledge Harvest (CKH)
+# CKH — Citizen Knowledge Harvest
 
-### Humanity's Missing Knowledge Ledger
+## Overview
 
-Citizen Knowledge Harvest (CKH) is an open framework for transforming everyday observations, experiments, adaptations, and lived experience into structured, searchable, and citable knowledge assets.
+**Citizen Knowledge Harvest (CKH)** is a concept platform and protocol designed to capture, validate, preserve, trace, and reward the invisible knowledge created every day by billions of people.
 
-The project is based on a simple belief:
+The project introduces the idea of a **Civilizational Knowledge Ledger**: a system that treats human observations, experiments, adaptations, and lived experiences as valuable knowledge assets that deserve preservation and attribution.
 
-> Billions of people conduct research every day without calling it research.
+### Core Vision
 
-Farmers test cultivation methods.
-
-Mechanics develop diagnostic expertise.
-
-Parents invent adaptive solutions.
-
-Artisans refine techniques.
-
-Workers discover efficiencies.
-
-Communities solve problems under real-world constraints.
-
-Most of this knowledge is never documented, shared, preserved, or recognized.
-
-CKH exists to change that.
+> Transforming everyday human experience into civilization’s largest research commons.
 
 ---
 
 ## The Problem
 
-Modern civilization has built powerful systems for documenting formal knowledge:
+Modern civilization tracks almost everything:
 
-* Academic papers
-* Journals
-* Patents
-* Universities
-* Research institutions
+- Money
+- Products
+- Supply chains
+- Populations
+- Emissions
 
-Yet an enormous amount of valuable human knowledge remains invisible.
+Yet it does not systematically track how humanity learns.
 
-Every day, people:
+Every day, billions of people generate observations, discoveries, adaptations, and solutions through lived experience. Most of this knowledge disappears without documentation, attribution, or preservation.
 
-* Observe patterns
-* Experiment with solutions
-* Adapt to challenges
-* Develop practical expertise
-* Create innovations
-
-Most of these insights disappear without record.
-
-When individuals retire, migrate, or pass away, entire libraries of experience can vanish with them.
-
-This creates a massive global knowledge loss problem.
+CKH aims to close this gap by creating humanity’s first global knowledge ledger.
 
 ---
 
-## The Core Idea
+## Invisible Research Theory
 
-CKH introduces a simple protocol that enables anyone to become a documented knowledge contributor.
+CKH is built upon the concept of **Invisible Research Theory**.
 
-Instead of treating knowledge creation as something limited to institutions, CKH recognizes that research happens everywhere.
+### Visible Research
 
-The protocol transforms:
+Knowledge that is:
 
-```text
-Observation
-→ Experiment
-→ Adaptation
-→ Documentation
-→ Verification
-→ Publication
-→ Citation
-→ Preservation
-```
-
-into a permanent knowledge asset.
-
----
-
-## Invisible Research Theory (IRT)
-
-CKH is inspired by Invisible Research Theory.
-
-The theory proposes that humanity operates through two parallel knowledge systems.
-
-### Visible Knowledge System
-
-* Universities
-* Academic journals
-* Patents
-* Research organizations
-* Formal institutions
-
-### Invisible Knowledge System
-
-* Daily observation
-* Practical expertise
-* Local experimentation
-* Community adaptation
-* Intergenerational wisdom
-
-The visible system is documented.
-
-The invisible system is often lost.
-
-CKH acts as a bridge between these two worlds.
-
----
-
-## The CKH Protocol
-
-Each knowledge contribution can be captured using a lightweight micro-entry structure.
-
-### Observation
-
-What did you notice?
-
-### Experiment
-
-What did you try?
-
-### Outcome
-
-What happened?
-
-### Insight
-
-What did you learn?
-
-### Knowledge Origin
-
-Where did the idea come from?
+- Published
+- Peer-reviewed
+- Funded
+- Institutionalized
+- Professionally documented
 
 Examples:
 
-* Observation
-* Experience
-* Combination
-* Necessity
-* Tradition
-* Collaboration
-* AI Augmentation
+- Academic papers
+- University research
+- Patents
+- Scientific journals
 
-### Replication Notes
+### Invisible Research
 
-How can someone else test it?
+Knowledge that is:
 
----
+- Practical
+- Experience-based
+- Informal
+- Localized
+- Undocumented
 
-## Knowledge Provenance Index
+Examples:
 
-CKH introduces a simple framework for tracking the maturity of knowledge.
+- Farmers improving cultivation methods
+- Mechanics diagnosing failures
+- Parents solving developmental challenges
+- Communities adapting to environmental changes
+- Small businesses optimizing operations
 
-| Code | Meaning              |
-| ---- | -------------------- |
-| O    | Observation          |
-| E    | Experiment           |
-| A    | Adaptation           |
-| R    | Replication          |
-| C    | Community Validation |
-
-### Examples
-
-#### O-E-A
-
-Early Insight
-
-#### O-E-A-R
-
-Verified Practice
-
-#### O-E-A-R-C
-
-Community Knowledge Asset
-
-This creates a transparent pathway from individual observation to collective knowledge.
+CKH seeks to make invisible research visible.
 
 ---
 
-## The Kallol Taxonomy
+## Mission
 
-CKH organizes contributions into discoverable categories.
+To create a permanent infrastructure that enables humanity to:
 
-### Core Categories
-
-* Grassroots Agricultural Innovation
-* Tacit Mechanical Expertise
-* Household Adaptive Intelligence
-* Community Resource Innovation
-* Informal Healthcare Knowledge
-* Local Environmental Intelligence
-* Craft and Artisan Knowledge
-* Micro Entrepreneurship Innovation
-* Crisis Adaptation Knowledge
-* Intergenerational Wisdom Systems
+- Capture knowledge
+- Validate knowledge
+- Preserve knowledge
+- Trace knowledge origins
+- Reward contributors
+- Build collective intelligence
 
 ---
 
-## Knowledge DNA
+## Core Components
 
-Every contribution contains a unique combination of:
+### 1. Knowledge Harvesting
 
-* Origin
-* Novelty
-* Impact
-* Replicability
-* Evidence
-* Community Adoption
-* Transferability
+A structured system for recording:
 
-Together these form a contribution's Knowledge DNA.
+- Observations
+- Experiments
+- Adaptations
+- Discoveries
+- Local innovations
+- Community solutions
+
+### 2. Knowledge Provenance
+
+Tracks the complete history of a knowledge contribution.
+
+Features include:
+
+- Attribution
+- Origin tracing
+- Validation history
+- Contribution chains
+- Citation records
+
+### 3. Knowledge DNA
+
+A framework for identifying and mapping the fundamental components of knowledge.
+
+Potential dimensions include:
+
+- Context
+- Observation
+- Method
+- Outcome
+- Evidence
+- Impact
+
+### 4. Knowledge Taxonomy
+
+Classification system for organizing knowledge into searchable and reusable categories.
+
+### 5. Civilizational Memory
+
+Long-term preservation infrastructure designed to prevent valuable knowledge from disappearing across generations.
+
+### 6. Knowledge Commons
+
+A global repository where knowledge becomes:
+
+- Discoverable
+- Searchable
+- Reusable
+- Shareable
+- Citable
+
+### 7. Knowledge GDP
+
+A proposed framework for measuring the societal and economic value created through collective knowledge generation.
 
 ---
 
-## Civilizational Memory
+## Platform Features
 
-CKH is not only a documentation system.
+The CKH interface includes:
 
-It is a preservation system.
+### Interactive Knowledge Gap Visualizations
 
-The goal is to prevent valuable knowledge from disappearing.
+Demonstrates the difference between:
 
-A single insight may evolve through multiple stages:
+- Formal research output
+- Everyday human experimentation
+
+### Protocol Explorer
+
+Interactive walkthrough of the CKH knowledge lifecycle.
+
+### Knowledge Submission Interface
+
+Structured forms for capturing knowledge contributions.
+
+### Provenance Engine
+
+Visualization of knowledge origins and attribution chains.
+
+### Knowledge DNA Explorer
+
+Interactive representation of knowledge composition and relationships.
+
+### Commons Network
+
+Global visualization of connected knowledge contributions.
+
+### Impact Dashboard
+
+Displays metrics related to contribution, preservation, and collective intelligence.
+
+### Manifesto
+
+Defines the philosophical foundation of the Citizen Knowledge Harvest initiative.
+
+---
+
+## Design Philosophy
+
+### Visual Language
+
+- Dark, immersive interface
+- Futuristic research aesthetics
+- Data-centric storytelling
+- Interactive visual systems
+- Knowledge-network metaphors
+
+### Core Colors
+
+| Purpose | Color |
+|----------|----------|
+| Accent | #00F5D4 |
+| Secondary Accent | #6C63FF |
+| Highlight | #F9C74F |
+| Background | #050505 |
+
+### Typography
+
+Primary:
+
+- Inter
+- SF Pro Display
+
+Monospace:
+
+- JetBrains Mono
+
+---
+
+## Accessibility
+
+CKH incorporates:
+
+- Semantic HTML structure
+- Keyboard accessibility
+- Skip navigation links
+- Reduced-motion support
+- Responsive layouts
+- Focus indicators
+
+---
+
+## Technology Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Canvas-based visualizations
+
+### Design
+
+- Responsive architecture
+- Custom animation system
+- Interactive dashboards
+- Data visualization components
+
+---
+
+## Proposed Knowledge Lifecycle
 
 ```text
-Individual
-→ Family
-→ Community
-→ Region
-→ Nation
-→ World
+Capture
+   ↓
+Validate
+   ↓
+Classify
+   ↓
+Preserve
+   ↓
+Trace
+   ↓
+Reward
+   ↓
+Reuse
+   ↓
+Collective Intelligence
 ```
 
-CKH seeks to preserve this journey.
+---
+
+## Long-Term Vision
+
+CKH envisions a future where:
+
+- Every meaningful observation can be preserved.
+- Every contributor can receive attribution.
+- Every community can share local intelligence.
+- Every generation can inherit accumulated wisdom.
+
+The goal is to create a living, searchable, and permanent knowledge infrastructure for humanity.
 
 ---
 
-## Future Concepts
+## Guiding Principle
 
-### Knowledge GDP
-
-A framework for measuring the value of knowledge creation and preservation.
-
-### Knowledge Reputation
-
-Trust earned through usefulness, replication, and impact rather than popularity.
-
-### Knowledge Lineage
-
-Tracking how ideas evolve, adapt, and spread over time.
-
-### Knowledge Extinction Tracker
-
-Identifying forms of knowledge at risk of disappearing.
-
-### Civilizational Intelligence Index
-
-Measuring a society's ability to generate, preserve, and share knowledge.
+> Every observation matters.
+>
+> Every experiment matters.
+>
+> Every adaptation matters.
+>
+> Humanity deserves a knowledge ledger.
 
 ---
 
-## Why This Matters
+## Author
 
-Civilizations track:
+**Kallol Chakrabarti**
 
-* Money
-* Trade
-* Population
-* Resources
-* Infrastructure
-
-But there is no global system for tracking human learning.
-
-CKH proposes a missing layer:
-
-### A Knowledge Ledger for Humanity
-
-A place where everyday intelligence becomes part of our collective memory.
+Founder, Citizen Knowledge Harvest (CKH)
 
 ---
 
-## Vision
+## Status
 
-Imagine a world where:
+**Concept / Protocol Design Phase**
 
-* Every citizen can contribute knowledge.
-* Every useful insight can be preserved.
-* Every adaptation can be discovered.
-* Every contributor can receive recognition.
-* Every generation can inherit the lessons of those before them.
-
-CKH is a step toward that future.
-
----
-
-## Contributing
-
-Contributions are welcome from:
-
-* Researchers
-* Students
-* Farmers
-* Artisans
-* Engineers
-* Teachers
-* Workers
-* Community leaders
-* Independent thinkers
-
-If you observe, experiment, adapt, and learn, you already contribute to human knowledge.
+Citizen Knowledge Harvest is currently presented as a foundational framework and vision for building a global knowledge infrastructure.
 
 ---
 
 ## License
 
-Open Knowledge • Open Research • Open Collaboration
+License not specified.
 
----
+Consider adding one of the following:
 
-## Motto
+- MIT License
+- Apache 2.0 License
+- GNU GPL v3
+- Proprietary License
 
-> "The future should remember what humanity learns."
-
+Before public release.
