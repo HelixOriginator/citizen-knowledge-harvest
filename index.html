@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050505" />
+<title>CKH — Citizen Knowledge Harvest | Humanity's Missing Knowledge Ledger</title>
+<meta name="description" content="CKH is the world's first infrastructure for capturing, validating, preserving, tracing, and rewarding the invisible knowledge produced daily by billions of people. Transforming everyday human experience into civilization's largest research commons." />
+<meta name="keywords" content="Citizen Knowledge Harvest, CKH, Invisible Research Theory, Knowledge Commons, Knowledge Provenance, Knowledge DNA, Civilizational Memory, Grassroots Innovation, Tacit Knowledge" />
+<meta name="author" content="CKH Protocol" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CKH — Citizen Knowledge Harvest" />
+<meta property="og:description" content="Transforming Everyday Human Experience into Civilization's Largest Research Commons." />
+<meta property="og:site_name" content="Citizen Knowledge Harvest" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CKH — Citizen Knowledge Harvest" />
+<meta name="twitter:description" content="Humanity's Missing Knowledge Ledger. Every observation matters. Every experiment matters. Every adaptation matters." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Citizen Knowledge Harvest",
+  "alternateName": "CKH",
+  "description": "A global protocol for capturing, validating, preserving, tracing, and rewarding invisible human knowledge.",
+  "slogan": "Transforming Everyday Human Experience into Civilization's Largest Research Commons",
+  "foundingDate": "2026"
+}
+</script>
+
+<style>
+:root{
+  --bg:#050505; --surface:#0D0D0D; --surface-2:#121212; --surface-3:#181818;
+  --line:rgba(255,255,255,0.06); --line-strong:rgba(255,255,255,0.12);
+  --accent:#00F5D4; --accent-2:#6C63FF; --highlight:#F9C74F;
+  --text:#FFFFFF; --muted:#A0A0A0; --dim:#6a6a6a;
+  --accent-soft:rgba(0,245,212,0.12); --accent-2-soft:rgba(108,99,255,0.14);
+  --highlight-soft:rgba(249,199,79,0.12);
+  --radius-sm:8px; --radius:14px; --radius-lg:22px; --radius-xl:32px;
+  --ease:cubic-bezier(0.22,1,0.36,1); --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --maxw:1280px; --pad:clamp(20px,4vw,48px);
+  --font:"Inter","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:"JetBrains Mono","SF Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;overflow-x:hidden;min-height:100vh;
+}
+body::before{
+  content:"";position:fixed;inset:0;
+  background:
+    radial-gradient(1200px 800px at 10% -10%,rgba(0,245,212,0.08),transparent 60%),
+    radial-gradient(1000px 700px at 100% 10%,rgba(108,99,255,0.09),transparent 60%),
+    radial-gradient(900px 600px at 50% 100%,rgba(249,199,79,0.05),transparent 60%);
+  pointer-events:none;z-index:0;
+}
+body::after{
+  content:"";position:fixed;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;z-index:0;
+  mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);
+}
+::selection{background:var(--accent);color:var(--bg)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--accent-2),var(--accent));border-radius:10px;border:2px solid var(--bg)}
+
+h1,h2,h3,h4,h5{font-family:var(--font);font-weight:600;letter-spacing:-0.02em;line-height:1.1;color:var(--text)}
+h1{font-size:clamp(2.5rem,6vw,5.5rem);font-weight:700;letter-spacing:-0.035em}
+h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-0.03em}
+h3{font-size:clamp(1.25rem,2vw,1.75rem)}
+h4{font-size:1.1rem}
+p{color:var(--muted);font-size:1.05rem}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);padding:8px 14px;background:var(--accent-soft);
+  border:1px solid rgba(0,245,212,0.25);border-radius:100px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite}
+
+.gradient-text{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 50%,var(--highlight) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+section{padding:clamp(80px,12vw,160px) 0;position:relative;z-index:1}
+.section-head{max-width:820px;margin:0 auto 64px;text-align:center}
+.section-head .eyebrow{margin-bottom:20px}
+.section-head h2{margin-bottom:20px}
+.section-head p{font-size:1.15rem;max-width:640px;margin:0 auto}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:100px;
+  font-family:var(--font);font-size:0.95rem;font-weight:500;letter-spacing:0.01em;
+  text-decoration:none;border:1px solid transparent;cursor:pointer;
+  transition:all 0.4s var(--ease);position:relative;overflow:hidden;white-space:nowrap;
+}
+.btn-primary{background:var(--accent);color:var(--bg);box-shadow:0 0 0 1px rgba(0,245,212,0.4),0 10px 30px rgba(0,245,212,0.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(0,245,212,0.6),0 14px 40px rgba(0,245,212,0.4)}
+.btn-ghost{background:rgba(255,255,255,0.03);color:var(--text);border-color:var(--line-strong);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:rgba(255,255,255,0.06);border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn .arrow{transition:transform 0.3s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all 0.4s var(--ease);background:rgba(5,5,5,0.6);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid transparent}
+.nav.scrolled{padding:12px 0;border-bottom-color:var(--line);background:rgba(5,5,5,0.85)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:600;letter-spacing:-0.01em}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));position:relative;display:grid;place-items:center;box-shadow:0 0 20px rgba(0,245,212,0.3)}
+.logo-mark::after{content:"";position:absolute;inset:4px;border-radius:6px;background:var(--bg)}
+.logo-mark svg{position:relative;z-index:1}
+.logo-text{font-size:1rem}
+.logo-text span{color:var(--muted);font-weight:400;margin-left:6px;font-size:0.85rem}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;padding:8px 14px;font-size:0.9rem;border-radius:100px;transition:all 0.3s var(--ease)}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-cta .btn{padding:10px 20px;font-size:0.85rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px}
+@media(max-width:900px){.nav-links{display:none}.nav-toggle{display:block}}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-content{position:relative;z-index:2;max-width:960px;margin:0 auto;text-align:center}
+.hero h1{margin:24px 0 28px}
+.hero-sub{font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--muted);max-width:720px;margin:0 auto 44px;line-height:1.6}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.hero-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--line);max-width:720px;margin:0 auto}
+.hero-meta-item{text-align:center}
+.hero-meta-item .num{font-family:var(--font-mono);font-size:1.5rem;color:var(--accent);font-weight:600}
+.hero-meta-item .lbl{font-size:0.78rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.12em;margin-top:4px}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--dim);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;font-family:var(--font-mono);animation:float 3s ease-in-out infinite}
+.scroll-hint::after{content:"";display:block;width:1px;height:30px;background:linear-gradient(180deg,var(--accent),transparent);margin:10px auto 0}
+
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;transition:all 0.4s var(--ease);position:relative;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+
+.grid{display:grid;gap:24px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+@media(min-width:600px) and (max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+
+.gap-compare{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+@media(max-width:800px){.gap-compare{grid-template-columns:1fr}}
+.gap-panel{border-radius:var(--radius-lg);padding:40px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.gap-panel.visible{background:linear-gradient(180deg,rgba(0,245,212,0.05),transparent);border-color:rgba(0,245,212,0.2)}
+.gap-panel.invisible{background:linear-gradient(180deg,rgba(108,99,255,0.05),transparent);border-color:rgba(108,99,255,0.2)}
+.gap-panel h3{font-size:1.5rem;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.gap-panel .tag{font-family:var(--font-mono);font-size:0.7rem;padding:4px 10px;border-radius:100px;letter-spacing:0.1em}
+.gap-panel.visible .tag{background:var(--accent-soft);color:var(--accent)}
+.gap-panel.invisible .tag{background:var(--accent-2-soft);color:var(--accent-2)}
+.gap-stat{font-family:var(--font-mono);font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;margin:20px 0 8px;letter-spacing:-0.03em}
+.gap-panel.visible .gap-stat{color:var(--accent)}
+.gap-panel.invisible .gap-stat{color:var(--accent-2)}
+.gap-stat-label{color:var(--muted);font-size:0.9rem;margin-bottom:24px}
+.gap-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.gap-list li{display:flex;align-items:center;gap:10px;font-size:0.92rem;color:var(--muted);padding:8px 0;border-bottom:1px dashed var(--line)}
+.gap-list li:last-child{border-bottom:none}
+.gap-list li::before{content:"";width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.gap-panel.visible .gap-list li::before{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.gap-panel.invisible .gap-list li::before{background:var(--accent-2);box-shadow:0 0 8px var(--accent-2)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;min-height:500px;position:relative}
+.split::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--line-strong),transparent);z-index:2}
+@media(max-width:800px){.split{grid-template-columns:1fr}.split::before{display:none}}
+.split-col{padding:48px 40px;position:relative}
+.split-col.visible{background:radial-gradient(600px 400px at 0% 0%,rgba(0,245,212,0.08),transparent 60%)}
+.split-col.invisible{background:radial-gradient(600px 400px at 100% 100%,rgba(108,99,255,0.08),transparent 60%)}
+.split-col h3{font-size:1.75rem;margin-bottom:16px}
+.split-col.visible h3{color:var(--accent)}
+.split-col.invisible h3{color:var(--accent-2)}
+.split-col p{margin-bottom:28px}
+.split-items{display:flex;flex-direction:column;gap:14px}
+.split-item{display:flex;align-items:flex-start;gap:14px;padding:14px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line);transition:all 0.3s var(--ease)}
+.split-item:hover{background:rgba(255,255,255,0.04);transform:translateX(4px)}
+.split-item-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.split-col.visible .split-item-icon{background:var(--accent-soft);color:var(--accent)}
+.split-col.invisible .split-item-icon{background:var(--accent-2-soft);color:var(--accent-2)}
+.split-item-text strong{display:block;color:var(--text);font-weight:500;margin-bottom:2px}
+.split-item-text span{font-size:0.85rem;color:var(--muted)}
+
+.protocol-flow{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:40px;position:relative}
+@media(max-width:1100px){.protocol-flow{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:600px){.protocol-flow{grid-template-columns:repeat(2,1fr)}}
+.protocol-step{background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);border:1px solid var(--line);border-radius:var(--radius);padding:20px 16px;text-align:center;cursor:pointer;transition:all 0.4s var(--ease);position:relative}
+.protocol-step:hover,.protocol-step.active{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,245,212,0.15)}
+.protocol-step-num{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;margin-bottom:8px}
+.protocol-step-icon{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin:0 auto 12px;transition:all 0.4s var(--ease)}
+.protocol-step:hover .protocol-step-icon,.protocol-step.active .protocol-step-icon{background:var(--accent);color:var(--bg);transform:scale(1.1)}
+.protocol-step h4{font-size:0.95rem;font-weight:500;margin-bottom:6px}
+.protocol-step p{font-size:0.78rem;color:var(--dim);line-height:1.4}
+.protocol-detail{margin-top:32px;padding:32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(0,245,212,0.04),rgba(108,99,255,0.04));border:1px solid var(--line);min-height:160px;transition:all 0.4s var(--ease)}
+.protocol-detail h3{margin-bottom:12px;color:var(--accent)}
+.protocol-detail p{font-size:1rem}
+
+.entry-form{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--line);border-radius:var(--radius-xl);padding:48px;position:relative;overflow:hidden;max-width:900px;margin:0 auto}
+.entry-form::before{content:"";position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,245,212,0.1),transparent 70%);pointer-events:none}
+.entry-form::after{content:"";position:absolute;bottom:-100px;left:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(108,99,255,0.1),transparent 70%);pointer-events:none}
+.form-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+.form-header h3{font-size:1.4rem}
+.form-status{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent)}
+.form-status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;position:relative;z-index:1}
+@media(max-width:700px){.form-grid{grid-template-columns:1fr}.entry-form{padding:28px}}
+.form-field{display:flex;flex-direction:column;gap:8px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:0.8rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;font-family:var(--font-mono);display:flex;align-items:center;justify-content:space-between}
+.form-field label .hint{color:var(--dim);text-transform:none;letter-spacing:0;font-family:var(--font);font-size:0.75rem}
+.form-field input,.form-field textarea,.form-field select{background:rgba(0,0,0,0.3);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;color:var(--text);font-family:var(--font);font-size:0.95rem;transition:all 0.3s var(--ease);resize:vertical}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:none;border-color:var(--accent);background:rgba(0,245,212,0.03);box-shadow:0 0 0 3px rgba(0,245,212,0.1)}
+.form-field textarea{min-height:90px}
+.confidence{display:flex;flex-direction:column;gap:10px}
+.confidence-bar{display:flex;gap:4px;height:36px}
+.confidence-seg{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--line);border-radius:6px;cursor:pointer;transition:all 0.2s var(--ease);position:relative}
+.confidence-seg:hover{background:rgba(255,255,255,0.08)}
+.confidence-seg.active{background:linear-gradient(180deg,var(--accent),rgba(0,245,212,0.6));border-color:var(--accent);box-shadow:0 0 12px rgba(0,245,212,0.4)}
+.confidence-value{font-family:var(--font-mono);font-size:0.9rem;color:var(--accent);text-align:center}
+.tags-input{display:flex;flex-wrap:wrap;gap:8px;padding:10px;background:rgba(0,0,0,0.3);border:1px solid var(--line);border-radius:var(--radius);min-height:52px;cursor:text}
+.tag-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:var(--accent-soft);border:1px solid rgba(0,245,212,0.25);border-radius:100px;font-size:0.8rem;color:var(--accent)}
+.tag-chip button{background:none;border:none;color:var(--accent);cursor:pointer;font-size:1rem;line-height:1;padding:0}
+.tag-input{flex:1;min-width:100px;background:none;border:none;color:var(--text);font-family:var(--font);font-size:0.9rem;padding:4px;outline:none}
+.form-footer{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;position:relative;z-index:1}
+.form-meta{font-family:var(--font-mono);font-size:0.78rem;color:var(--dim)}
+
+.origin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+@media(max-width:900px){.origin-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.origin-grid{grid-template-columns:1fr}}
+.origin-node{padding:24px;border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--line);position:relative;overflow:hidden;transition:all 0.4s var(--ease);cursor:pointer}
+.origin-node:hover{transform:translateY(-4px);border-color:var(--accent)}
+.origin-node::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform 0.4s var(--ease)}
+.origin-node:hover::before{transform:scaleX(1)}
+.origin-node-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.origin-node h4{font-size:1.05rem;margin-bottom:6px}
+.origin-node p{font-size:0.85rem;line-height:1.5}
+.origin-node .pct{position:absolute;top:16px;right:16px;font-family:var(--font-mono);font-size:0.75rem;color:var(--dim)}
+
+.provenance-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+@media(max-width:900px){.provenance-wrap{grid-template-columns:1fr}}
+.provenance-stages{display:flex;flex-direction:column;gap:12px}
+.prov-stage{display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;transition:all 0.3s var(--ease)}
+.prov-stage:hover{background:rgba(255,255,255,0.04)}
+.prov-stage.active{border-color:var(--accent);background:var(--accent-soft)}
+.prov-letter{width:44px;height:44px;border-radius:12px;background:var(--surface-3);display:grid;place-items:center;font-family:var(--font-mono);font-size:1.2rem;font-weight:700;color:var(--muted);transition:all 0.3s var(--ease);flex-shrink:0}
+.prov-stage.active .prov-letter{background:var(--accent);color:var(--bg);box-shadow:0 0 20px rgba(0,245,212,0.4)}
+.prov-info strong{display:block;color:var(--text);font-weight:500;margin-bottom:2px}
+.prov-info span{font-size:0.85rem;color:var(--muted)}
+.provenance-display{background:linear-gradient(135deg,rgba(0,245,212,0.04),rgba(108,99,255,0.04));border:1px solid var(--line);border-radius:var(--radius-xl);padding:40px;text-align:center;min-height:360px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.provenance-code{font-family:var(--font-mono);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:0.1em;margin-bottom:16px;color:var(--accent);text-shadow:0 0 30px rgba(0,245,212,0.3)}
+.provenance-code .sep{color:var(--dim);margin:0 4px}
+.provenance-label{font-size:1.3rem;font-weight:500;margin-bottom:8px}
+.provenance-desc{color:var(--muted);max-width:400px;margin:0 auto}
+.provenance-score{margin-top:24px;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(249,199,79,0.1);border:1px solid rgba(249,199,79,0.25);border-radius:100px;font-family:var(--font-mono);font-size:0.85rem;color:var(--highlight)}
+
+.taxonomy{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:40px}
+@media(max-width:800px){.taxonomy{grid-template-columns:1fr}}
+.tax-item{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all 0.3s var(--ease)}
+.tax-item:hover{border-color:var(--line-strong)}
+.tax-item.open{border-color:var(--accent);background:rgba(0,245,212,0.03)}
+.tax-head{display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;transition:all 0.3s var(--ease)}
+.tax-head:hover{background:rgba(255,255,255,0.02)}
+.tax-num{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent);width:32px;flex-shrink:0}
+.tax-icon{width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0}
+.tax-title{flex:1;font-size:1rem;font-weight:500}
+.tax-count{font-family:var(--font-mono);font-size:0.75rem;color:var(--dim);padding:4px 10px;background:rgba(255,255,255,0.04);border-radius:100px}
+.tax-toggle{width:24px;height:24px;color:var(--muted);transition:transform 0.3s var(--ease)}
+.tax-item.open .tax-toggle{transform:rotate(180deg);color:var(--accent)}
+.tax-body{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease)}
+.tax-item.open .tax-body{max-height:300px}
+.tax-body-inner{padding:0 22px 22px 70px;color:var(--muted);font-size:0.92rem;line-height:1.6}
+.tax-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tax-tag{font-family:var(--font-mono);font-size:0.7rem;padding:3px 8px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.2);color:var(--accent-2);border-radius:100px}
+
+.dna-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+@media(max-width:900px){.dna-wrap{grid-template-columns:1fr}}
+.dna-viz{aspect-ratio:1;max-width:500px;margin:0 auto;position:relative}
+#dnaSvg{width:100%;height:100%}
+.dna-components{display:flex;flex-direction:column;gap:12px}
+.dna-comp{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:var(--radius);transition:all 0.3s var(--ease)}
+.dna-comp:hover{background:rgba(255,255,255,0.04);transform:translateX(4px)}
+.dna-comp-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px currentColor}
+.dna-comp-info{flex:1}
+.dna-comp-info strong{display:block;font-size:0.95rem;font-weight:500}
+.dna-comp-info span{font-size:0.8rem;color:var(--muted)}
+.dna-comp-val{font-family:var(--font-mono);font-size:0.85rem;color:var(--accent)}
+
+.memory-timeline{position:relative;padding:40px 0;margin-top:40px}
+.memory-timeline::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--line-strong) 10%,var(--line-strong) 90%,transparent);transform:translateY(-50%)}
+.memory-stages{display:flex;justify-content:space-between;position:relative;z-index:1}
+.memory-stage{flex:1;text-align:center;position:relative;padding:0 8px}
+.memory-node{width:60px;height:60px;border-radius:50%;background:var(--surface-2);border:2px solid var(--line-strong);margin:0 auto 16px;display:grid;place-items:center;color:var(--muted);transition:all 0.4s var(--ease);position:relative}
+.memory-stage.active .memory-node{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);box-shadow:0 0 30px rgba(0,245,212,0.4);transform:scale(1.15)}
+.memory-stage.active .memory-node::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--accent);opacity:0.4;animation:ripple 2s infinite}
+.memory-label{font-size:0.95rem;font-weight:500;margin-bottom:4px}
+.memory-meta{font-family:var(--font-mono);font-size:0.75rem;color:var(--dim)}
+.memory-stage.active .memory-label{color:var(--accent)}
+.memory-stage.active .memory-meta{color:var(--accent)}
+@media(max-width:700px){
+  .memory-stages{flex-direction:column;gap:24px}
+  .memory-timeline::before{top:0;bottom:0;left:30px;right:auto;width:2px;height:auto;transform:none;background:linear-gradient(180deg,transparent,var(--line-strong) 10%,var(--line-strong) 90%,transparent)}
+  .memory-stage{text-align:left;display:flex;align-items:center;gap:20px;padding:0}
+  .memory-node{margin:0;flex-shrink:0}
+}
+
+.network-wrap{position:relative;height:500px;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse at center,rgba(108,99,255,0.05),transparent 70%);margin-top:40px}
+#networkCanvas{width:100%;height:100%;display:block}
+.network-legend{position:absolute;bottom:20px;left:20px;display:flex;flex-direction:column;gap:8px;padding:14px 18px;background:rgba(5,5,5,0.8);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--radius);font-size:0.8rem}
+.network-legend-item{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.network-legend-dot{width:8px;height:8px;border-radius:50%}
+
+.commons-wrap{position:relative;height:560px;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse at center,rgba(0,245,212,0.04),transparent 70%);margin-top:40px}
+#worldCanvas{width:100%;height:100%;display:block}
+.commons-stats{position:absolute;top:20px;left:20px;display:flex;flex-direction:column;gap:10px;padding:16px 20px;background:rgba(5,5,5,0.8);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--radius);font-family:var(--font-mono);font-size:0.8rem;min-width:200px}
+.commons-stat{display:flex;justify-content:space-between;gap:20px}
+.commons-stat span:first-child{color:var(--muted)}
+.commons-stat span:last-child{color:var(--accent);font-weight:600}
+.commons-feed{position:absolute;bottom:20px;right:20px;display:flex;flex-direction:column;gap:6px;padding:14px 18px;background:rgba(5,5,5,0.8);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:var(--radius);font-size:0.78rem;max-width:280px;max-height:180px;overflow:hidden}
+.commons-feed-title{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.commons-feed-title::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s infinite}
+.feed-item{color:var(--muted);padding:4px 0;border-bottom:1px dashed var(--line);opacity:0;animation:feedIn 0.5s var(--ease) forwards}
+.feed-item:last-child{border-bottom:none}
+.feed-item strong{color:var(--text);font-weight:500}
+
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+@media(max-width:1000px){.impact-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.impact-grid{grid-template-columns:1fr}}
+.impact-card{padding:28px;border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--line);position:relative;overflow:hidden;transition:all 0.4s var(--ease)}
+.impact-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.impact-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.impact-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.impact-value{font-family:var(--font-mono);font-size:2.2rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:4px}
+.impact-label{font-size:0.85rem;color:var(--muted);margin-bottom:12px}
+.impact-trend{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:0.75rem;color:var(--accent);padding:3px 8px;background:var(--accent-soft);border-radius:100px}
+
+.future-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+@media(max-width:1000px){.future-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.future-grid{grid-template-columns:1fr}}
+.future-card{padding:28px 24px;border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));border:1px solid var(--line);position:relative;overflow:hidden;transition:all 0.4s var(--ease)}
+.future-card:hover{border-color:var(--accent-2);transform:translateY(-4px);background:linear-gradient(180deg,rgba(108,99,255,0.05),rgba(255,255,255,0.005))}
+.future-card::after{content:"";position:absolute;bottom:-50%;right:-50%;width:200px;height:200px;background:radial-gradient(circle,rgba(108,99,255,0.15),transparent 70%);opacity:0;transition:opacity 0.4s var(--ease)}
+.future-card:hover::after{opacity:1}
+.future-num{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent-2);letter-spacing:0.15em;margin-bottom:12px}
+.future-card h4{font-size:1.1rem;margin-bottom:8px;position:relative;z-index:1}
+.future-card p{font-size:0.88rem;position:relative;z-index:1}
+
+.manifesto{text-align:center;padding:100px 40px;border-radius:var(--radius-xl);background:radial-gradient(ellipse at top,rgba(0,245,212,0.08),transparent 60%),radial-gradient(ellipse at bottom,rgba(108,99,255,0.08),transparent 60%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));border:1px solid var(--line);position:relative;overflow:hidden;margin-top:40px}
+.manifesto::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,212,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,212,0.03) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at center,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black,transparent 70%)}
+.manifesto-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.manifesto .eyebrow{margin-bottom:32px}
+.manifesto-quote{font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.4;letter-spacing:-0.02em;font-weight:500;margin-bottom:40px}
+.manifesto-quote .hl{color:var(--accent)}
+.manifesto-lines{display:flex;flex-direction:column;gap:12px;font-size:1.15rem;color:var(--muted);margin-bottom:40px}
+.manifesto-lines span{display:inline-block;padding:4px 0;border-bottom:1px dashed var(--line)}
+.manifesto-lines em{color:var(--highlight);font-style:normal;font-weight:500}
+.manifesto-sig{font-family:var(--font-mono);font-size:0.85rem;color:var(--dim);letter-spacing:0.15em;text-transform:uppercase}
+
+footer{padding:80px 0 40px;border-top:1px solid var(--line);position:relative;z-index:1;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.4))}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-top{grid-template-columns:1fr}}
+.footer-brand p{margin-top:16px;max-width:340px;font-size:0.92rem}
+.footer-col h5{font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:500}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{color:var(--text);text-decoration:none;font-size:0.92rem;transition:color 0.3s var(--ease);display:inline-flex;align-items:center;gap:8px}
+.footer-col a:hover{color:var(--accent)}
+.footer-col a::before{content:"→";opacity:0;transform:translateX(-4px);transition:all 0.3s var(--ease);color:var(--accent)}
+.footer-col a:hover::before{opacity:1;transform:translateX(0)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--line);flex-wrap:wrap;gap:16px;font-size:0.85rem;color:var(--dim)}
+.footer-principles{display:flex;gap:20px;flex-wrap:wrap}
+.footer-principles span{display:inline-flex;align-items:center;gap:6px}
+.footer-principles span::before{content:"";width:4px;height:4px;background:var(--accent);border-radius:50%}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+@keyframes float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
+@keyframes ripple{0%{transform:scale(1);opacity:0.6}100%{transform:scale(1.6);opacity:0}}
+@keyframes feedIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s var(--ease),transform 0.8s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg);padding:8px 16px;z-index:1000;text-decoration:none;font-weight:500}
+.skip-link:focus{top:0}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#top" class="logo" aria-label="CKH Home">
+      <div class="logo-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="4" cy="4" r="1.5" fill="#00F5D4"/>
+          <circle cx="12" cy="4" r="1.5" fill="#6C63FF"/>
+          <circle cx="8" cy="12" r="1.5" fill="#F9C74F"/>
+          <path d="M4 4 L12 4 L8 12 Z" stroke="#00F5D4" stroke-width="0.5" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="logo-text">CKH<span>Protocol</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#gap">The Gap</a></li>
+      <li><a href="#theory">Theory</a></li>
+      <li><a href="#protocol">Protocol</a></li>
+      <li><a href="#taxonomy">Taxonomy</a></li>
+      <li><a href="#dna">Knowledge DNA</a></li>
+      <li><a href="#commons">Commons</a></li>
+      <li><a href="#manifesto">Manifesto</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#entry" class="btn btn-primary">Start Harvesting <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="container hero-content">
+    <span class="eyebrow">Citizen Knowledge Harvest · v1.0</span>
+    <h1 id="hero-title">Humanity's <span class="gradient-text">Missing Knowledge</span> Ledger</h1>
+    <p class="hero-sub">Every day, billions of people observe, experiment, adapt, and solve problems. Most of that knowledge vanishes. CKH makes it <strong style="color:var(--text)">visible</strong>, <strong style="color:var(--text)">searchable</strong>, <strong style="color:var(--text)">citable</strong>, and <strong style="color:var(--text)">immortal</strong>.</p>
+    <div class="hero-cta">
+      <a href="#entry" class="btn btn-primary">Start Harvesting Knowledge <span class="arrow">→</span></a>
+      <a href="#commons" class="btn btn-ghost">Explore the Commons</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="num">8.2B</div><div class="lbl">Potential Contributors</div></div>
+      <div class="hero-meta-item"><div class="num">∞</div><div class="lbl">Invisible Observations</div></div>
+      <div class="hero-meta-item"><div class="num">1</div><div class="lbl">Civilizational Ledger</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Scroll</div>
+</section>
+
+<section id="gap" aria-labelledby="gap-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">01 · The Knowledge Gap</span>
+      <h2 id="gap-title">A civilization that forgets <span class="gradient-text">99% of its learning</span></h2>
+      <p>Formal research captures a fraction of human discovery. The rest — the daily, lived, practical intelligence of billions — evaporates without record.</p>
+    </div>
+    <div class="gap-compare reveal">
+      <div class="gap-panel visible">
+        <span class="tag">VISIBLE SYSTEM</span>
+        <h3>Formal Research</h3>
+        <div class="gap-stat" data-counter="6000000">0</div>
+        <div class="gap-stat-label">Peer-reviewed papers published annually</div>
+        <ul class="gap-list">
+          <li>University laboratories</li>
+          <li>Funded research institutions</li>
+          <li>Patent offices & registries</li>
+          <li>Academic journals</li>
+          <li>Credentialed experts only</li>
+        </ul>
+      </div>
+      <div class="gap-panel invisible">
+        <span class="tag">INVISIBLE SYSTEM</span>
+        <h3>Invisible Research</h3>
+        <div class="gap-stat" data-counter="8000000000">0</div>
+        <div class="gap-stat-label">Daily undocumented experiments worldwide</div>
+        <ul class="gap-list">
+          <li>Farmers testing soil techniques</li>
+          <li>Mechanics diagnosing novel failures</li>
+          <li>Parents adapting to child needs</li>
+          <li>Street entrepreneurs optimizing trade</li>
+          <li>Communities solving local crises</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="theory" aria-labelledby="theory-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">02 · Invisible Research Theory</span>
+      <h2 id="theory-title">Two systems of <span class="gradient-text">human knowledge</span></h2>
+      <p>Knowledge exists in parallel. One is celebrated, archived, and rewarded. The other is lived, lost, and forgotten. CKH bridges both.</p>
+    </div>
+    <div class="split reveal">
+      <div class="split-col visible">
+        <span class="eyebrow" style="margin-bottom:16px">System A</span>
+        <h3>The Visible System</h3>
+        <p>Institutionalized, peer-reviewed, formally credited. Knowledge that has passed through gates of legitimacy.</p>
+        <div class="split-items">
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div class="split-item-text"><strong>Universities</strong><span>Formal education & research centers</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="split-item-text"><strong>Papers</strong><span>Peer-reviewed publications</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="split-item-text"><strong>Patents</strong><span>Registered intellectual property</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div><div class="split-item-text"><strong>Institutions</strong><span>Governments, corporations, foundations</span></div></div>
+        </div>
+      </div>
+      <div class="split-col invisible">
+        <span class="eyebrow" style="margin-bottom:16px;color:var(--accent-2);background:var(--accent-2-soft);border-color:rgba(108,99,255,0.25)">System B</span>
+        <h3>The Invisible System</h3>
+        <p>Embedded in practice, passed through generations, lost with each life. Knowledge that never asked for permission to exist.</p>
+        <div class="split-items">
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="split-item-text"><strong>Daily Observation</strong><span>Noticing patterns in ordinary life</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="split-item-text"><strong>Tacit Expertise</strong><span>Knowledge in the hands, not the books</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg></div><div class="split-item-text"><strong>Local Experimentation</strong><span>Trial and error in real contexts</span></div></div>
+          <div class="split-item"><div class="split-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="split-item-text"><strong>Community Adaptation</strong><span>Collective problem-solving under constraint</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="protocol" aria-labelledby="protocol-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">03 · The Protocol</span>
+      <h2 id="protocol-title">Eight stages from <span class="gradient-text">observation to preservation</span></h2>
+      <p>CKH is not a platform. It is a protocol — a structured pathway that transforms fleeting insight into permanent civilizational memory.</p>
+    </div>
+    <div class="protocol-flow reveal" role="tablist">
+      <div class="protocol-step active" data-step="0" role="tab" tabindex="0"><div class="protocol-step-num">01</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Observe</h4><p>Notice a pattern</p></div>
+      <div class="protocol-step" data-step="1" role="tab" tabindex="0"><div class="protocol-step-num">02</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0"/></svg></div><h4>Experiment</h4><p>Test a hypothesis</p></div>
+      <div class="protocol-step" data-step="2" role="tab" tabindex="0"><div class="protocol-step-num">03</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></div><h4>Adapt</h4><p>Refine the approach</p></div>
+      <div class="protocol-step" data-step="3" role="tab" tabindex="0"><div class="protocol-step-num">04</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h4>Document</h4><p>Record the method</p></div>
+      <div class="protocol-step" data-step="4" role="tab" tabindex="0"><div class="protocol-step-num">05</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h4>Verify</h4><p>Validate the claim</p></div>
+      <div class="protocol-step" data-step="5" role="tab" tabindex="0"><div class="protocol-step-num">06</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h4>Publish</h4><p>Release to commons</p></div>
+      <div class="protocol-step" data-step="6" role="tab" tabindex="0"><div class="protocol-step-num">07</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h4>Cite</h4><p>Link to lineage</p></div>
+      <div class="protocol-step" data-step="7" role="tab" tabindex="0"><div class="protocol-step-num">08</div><div class="protocol-step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><h4>Preserve</h4><p>Immortalize forever</p></div>
+    </div>
+    <div class="protocol-detail reveal" id="protocolDetail">
+      <h3>01 · Observe</h3>
+      <p>The protocol begins with noticing. A farmer sees that one corner of the field yields better. A mechanic hears an unfamiliar sound. A parent discovers that a particular rhythm calms a child. Observation is the seed of all knowledge — and the most frequently lost.</p>
+    </div>
+  </div>
+</section>
+
+<section id="entry" aria-labelledby="entry-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">04 · Micro Entry Engine</span>
+      <h2 id="entry-title">Document an insight in <span class="gradient-text">under 60 seconds</span></h2>
+      <p>Every contribution begins with a single entry. Small, structured, and designed to capture knowledge before it evaporates.</p>
+    </div>
+    <form class="entry-form reveal" onsubmit="event.preventDefault(); handleFormSubmit();">
+      <div class="form-header">
+        <h3>New Knowledge Entry</h3>
+        <div class="form-status">Live · Auto-saving</div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field full"><label for="f-obs">Observation <span class="hint">What did you notice?</span></label><textarea id="f-obs" placeholder="Describe what you observed in your daily work, life, or community..."></textarea></div>
+        <div class="form-field"><label for="f-exp">Experiment <span class="hint">What did you try?</span></label><input id="f-exp" type="text" placeholder="The method, technique, or change you tested"></div>
+        <div class="form-field"><label for="f-out">Outcome <span class="hint">What happened?</span></label><input id="f-out" type="text" placeholder="The result you observed"></div>
+        <div class="form-field full"><label for="f-ins">Insight <span class="hint">What did you learn?</span></label><textarea id="f-ins" placeholder="The underlying principle or lesson..."></textarea></div>
+        <div class="form-field"><label for="f-origin">Knowledge Origin</label>
+          <select id="f-origin">
+            <option>Observation</option><option>Experience</option><option>Combination</option><option>Imitation</option><option>Accident</option><option>Necessity</option><option>Tradition</option><option>Collaboration</option><option>AI Augmentation</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Tags <span class="hint">Press Enter to add</span></label>
+          <div class="tags-input" id="tagsInput">
+            <span class="tag-chip">agriculture<button type="button" aria-label="Remove">×</button></span>
+            <span class="tag-chip">soil<button type="button" aria-label="Remove">×</button></span>
+            <input type="text" class="tag-input" placeholder="Add tag...">
+          </div>
+        </div>
+        <div class="form-field full"><label for="f-repl">Replication Notes <span class="hint">How could someone else test this?</span></label><textarea id="f-repl" placeholder="Context, conditions, materials, constraints..."></textarea></div>
+        <div class="form-field full"><label>Confidence Score <span class="hint">How certain are you?</span></label>
+          <div class="confidence">
+            <div class="confidence-bar" id="confidenceBar">
+              <div class="confidence-seg active" data-val="1"></div><div class="confidence-seg active" data-val="2"></div><div class="confidence-seg active" data-val="3"></div><div class="confidence-seg active" data-val="4"></div><div class="confidence-seg active" data-val="5"></div><div class="confidence-seg" data-val="6"></div><div class="confidence-seg" data-val="7"></div><div class="confidence-seg" data-val="8"></div><div class="confidence-seg" data-val="9"></div><div class="confidence-seg" data-val="10"></div>
+            </div>
+            <div class="confidence-value">5 / 10 · Preliminary insight</div>
+          </div>
+        </div>
+        <div class="form-field full"><label>Community Validation</label>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button type="button" class="btn btn-ghost" style="padding:10px 18px;font-size:0.85rem;">👁 12 Observers</button>
+            <button type="button" class="btn btn-ghost" style="padding:10px 18px;font-size:0.85rem;">✓ 3 Verified</button>
+            <button type="button" class="btn btn-ghost" style="padding:10px 18px;font-size:0.85rem;">🔁 1 Replicated</button>
+            <button type="button" class="btn btn-ghost" style="padding:10px 18px;font-size:0.85rem;">+ Request Validation</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-footer">
+        <div class="form-meta">Entry ID · CKH-2026-06-20-8F3A · Provenance · O-E-A</div>
+        <button type="submit" class="btn btn-primary">Publish to Commons <span class="arrow">→</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="origin" aria-labelledby="origin-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">05 · Knowledge Origin Engine</span>
+      <h2 id="origin-title">Nine pathways through which <span class="gradient-text">knowledge is born</span></h2>
+      <p>Every insight has a genesis. CKH classifies the origin of knowledge to map the ecology of human discovery.</p>
+    </div>
+    <div class="origin-grid reveal">
+      <div class="origin-node"><div class="pct">28%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Observation</h4><p>Noticing patterns in the world through careful attention.</p></div>
+      <div class="origin-node"><div class="pct">22%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>Experience</h4><p>Knowledge earned through years of practice and repetition.</p></div>
+      <div class="origin-node"><div class="pct">14%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div><h4>Combination</h4><p>Merging two known ideas into a novel third insight.</p></div>
+      <div class="origin-node"><div class="pct">9%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Imitation</h4><p>Learning by watching and reproducing another's method.</p></div>
+      <div class="origin-node"><div class="pct">7%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h4>Accident</h4><p>Unexpected discoveries made through serendipity.</p></div>
+      <div class="origin-node"><div class="pct">11%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Necessity</h4><p>Innovation born from urgent need and constraint.</p></div>
+      <div class="origin-node"><div class="pct">5%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div><h4>Tradition</h4><p>Wisdom passed through generations, refined over time.</p></div>
+      <div class="origin-node"><div class="pct">3%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Collaboration</h4><p>Insights produced through shared effort and dialogue.</p></div>
+      <div class="origin-node"><div class="pct">1%</div><div class="origin-node-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>AI Augmentation</h4><p>Human insight amplified by machine intelligence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="provenance" aria-labelledby="prov-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">06 · Knowledge Provenance Index</span>
+      <h2 id="prov-title">A new metric for <span class="gradient-text">knowledge maturity</span></h2>
+      <p>Every piece of knowledge carries a history. The Provenance Index traces its journey from raw observation to community-validated asset.</p>
+    </div>
+    <div class="provenance-wrap reveal">
+      <div class="provenance-stages">
+        <div class="prov-stage active" data-prov="O"><div class="prov-letter">O</div><div class="prov-info"><strong>Observation</strong><span>Initial noticing · raw signal</span></div></div>
+        <div class="prov-stage" data-prov="E"><div class="prov-letter">E</div><div class="prov-info"><strong>Experiment</strong><span>Tested in practice · method documented</span></div></div>
+        <div class="prov-stage" data-prov="A"><div class="prov-letter">A</div><div class="prov-info"><strong>Adaptation</strong><span>Refined through iteration</span></div></div>
+        <div class="prov-stage" data-prov="R"><div class="prov-letter">R</div><div class="prov-info"><strong>Replication</strong><span>Independently reproduced elsewhere</span></div></div>
+        <div class="prov-stage" data-prov="C"><div class="prov-letter">C</div><div class="prov-info"><strong>Community Validation</strong><span>Endorsed by peer practitioners</span></div></div>
+      </div>
+      <div class="provenance-display">
+        <div class="provenance-code" id="provCode">O<span class="sep">-</span>E<span class="sep">-</span>A</div>
+        <div class="provenance-label" id="provLabel">Basic Insight</div>
+        <div class="provenance-desc" id="provDesc">A documented observation that has been tested and adapted. Ready for replication by others.</div>
+        <div class="provenance-score" id="provScore">Maturity · 3 / 5</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="taxonomy" aria-labelledby="tax-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">07 · The Kallool Taxonomy</span>
+      <h2 id="tax-title">Ten domains of <span class="gradient-text">everyday genius</span></h2>
+      <p>A classification system for the invisible knowledge that sustains civilizations. Each domain holds a universe of undocumented wisdom.</p>
+    </div>
+    <div class="taxonomy reveal" id="taxonomyGrid"></div>
+  </div>
+</section>
+
+<section id="dna" aria-labelledby="dna-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">08 · Knowledge DNA</span>
+      <h2 id="dna-title">Every insight has a <span class="gradient-text">unique genome</span></h2>
+      <p>Knowledge is not flat. Each contribution carries a genetic signature — seven components that define its character, potential, and lifespan.</p>
+    </div>
+    <div class="dna-wrap reveal">
+      <div class="dna-viz">
+        <svg id="dnaSvg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dnaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00F5D4"/>
+              <stop offset="100%" stop-color="#6C63FF"/>
+            </linearGradient>
+            <linearGradient id="dnaGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6C63FF"/>
+              <stop offset="100%" stop-color="#F9C74F"/>
+            </linearGradient>
+            <radialGradient id="dnaGlow">
+              <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#00F5D4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="250" cy="250" r="220" fill="url(#dnaGlow)"/>
+          <g id="dnaHelix"></g>
+        </svg>
+      </div>
+      <div class="dna-components">
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#00F5D4;background:#00F5D4"></div><div class="dna-comp-info"><strong>Origin</strong><span>Source of the insight</span></div><div class="dna-comp-val">Observation</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#6C63FF;background:#6C63FF"></div><div class="dna-comp-info"><strong>Novelty</strong><span>Uniqueness of the contribution</span></div><div class="dna-comp-val">87 / 100</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#F9C74F;background:#F9C74F"></div><div class="dna-comp-info"><strong>Impact</strong><span>Scope of potential effect</span></div><div class="dna-comp-val">Regional</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#00F5D4;background:#00F5D4"></div><div class="dna-comp-info"><strong>Transferability</strong><span>Portability to other contexts</span></div><div class="dna-comp-val">High</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#6C63FF;background:#6C63FF"></div><div class="dna-comp-info"><strong>Replication</strong><span>Ease of reproduction</span></div><div class="dna-comp-val">3 verified</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#F9C74F;background:#F9C74F"></div><div class="dna-comp-info"><strong>Evidence</strong><span>Strength of supporting data</span></div><div class="dna-comp-val">Strong</div></div>
+        <div class="dna-comp"><div class="dna-comp-dot" style="color:#00F5D4;background:#00F5D4"></div><div class="dna-comp-info"><strong>Community Adoption</strong><span>Rate of peer uptake</span></div><div class="dna-comp-val">142 nodes</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="memory" aria-labelledby="mem-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">09 · Civilizational Memory Engine</span>
+      <h2 id="mem-title">From a single insight to <span class="gradient-text">global heritage</span></h2>
+      <p>Knowledge travels. A farmer's discovery becomes a village's practice, a district's standard, a nation's policy, and finally, humanity's inheritance.</p>
+    </div>
+    <div class="memory-timeline reveal">
+      <div class="memory-stages" id="memoryStages">
+        <div class="memory-stage active" data-stage="0"><div class="memory-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="memory-label">Farmer</div><div class="memory-meta">1 contributor</div></div>
+        <div class="memory-stage" data-stage="1"><div class="memory-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="memory-label">Village</div><div class="memory-meta">~200 people</div></div>
+        <div class="memory-stage" data-stage="2"><div class="memory-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="memory-label">District</div><div class="memory-meta">~50,000 people</div></div>
+        <div class="memory-stage" data-stage="3"><div class="memory-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="memory-label">Nation</div><div class="memory-meta">~10M people</div></div>
+        <div class="memory-stage" data-stage="4"><div class="memory-node"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="memory-label">World</div><div class="memory-meta">8.2B people</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lineage" aria-labelledby="lin-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">10 · Knowledge Lineage Network</span>
+      <h2 id="lin-title">Tracing the <span class="gradient-text">ancestry of ideas</span></h2>
+      <p>Every insight has parents. CKH maps how ideas are created, adapted, reused, cited, and ultimately shape policy — revealing the true genealogy of human progress.</p>
+    </div>
+    <div class="network-wrap reveal">
+      <canvas id="networkCanvas" aria-hidden="true"></canvas>
+      <div class="network-legend">
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#00F5D4"></div>Idea Creation</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#6C63FF"></div>Adaptation</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#F9C74F"></div>Reuse & Citation</div>
+        <div class="network-legend-item"><div class="network-legend-dot" style="background:#FF6B9D"></div>Policy Impact</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="commons" aria-labelledby="com-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">11 · Global Knowledge Commons</span>
+      <h2 id="com-title">A living map of <span class="gradient-text">humanity's mind</span></h2>
+      <p>Every second, somewhere on Earth, someone is learning something that could help everyone else. CKH makes this invisible activity visible.</p>
+    </div>
+    <div class="commons-wrap reveal">
+      <canvas id="worldCanvas" aria-hidden="true"></canvas>
+      <div class="commons-stats">
+        <div class="commons-stat"><span>Active Contributors</span><span id="csContrib">1,247,832</span></div>
+        <div class="commons-stat"><span>Entries Today</span><span id="csEntries">48,291</span></div>
+        <div class="commons-stat"><span>Regions Active</span><span>194 / 195</span></div>
+        <div class="commons-stat"><span>Languages</span><span>287</span></div>
+      </div>
+      <div class="commons-feed" id="commonsFeed">
+        <div class="commons-feed-title">Live Activity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" aria-labelledby="imp-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">12 · Impact Dashboard</span>
+      <h2 id="imp-title">Measuring what <span class="gradient-text">matters most</span></h2>
+      <p>Not GDP. Not citations. New metrics for a new kind of wealth — the wealth of shared human understanding.</p>
+    </div>
+    <div class="impact-grid reveal">
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div class="impact-value" data-counter="24831294">0</div><div class="impact-label">Knowledge Deposits</div><div class="impact-trend">↑ 12.4% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="impact-value" data-counter="184729">0</div><div class="impact-label">Communities Participating</div><div class="impact-trend">↑ 8.7% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="impact-value" data-counter="9847291">0</div><div class="impact-label">Insights Preserved</div><div class="impact-trend">↑ 23.1% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="impact-value" data-counter="412847">0</div><div class="impact-label">Replication Events</div><div class="impact-trend">↑ 15.8% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="impact-value" data-counter="1284729">0</div><div class="impact-label">Research Citations</div><div class="impact-trend">↑ 31.2% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div class="impact-value" data-counter="3847">0</div><div class="impact-label">Policy Influences</div><div class="impact-trend">↑ 42.6% this month</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="impact-value">0.73</div><div class="impact-label">Civilizational Memory Score</div><div class="impact-trend">↑ 0.04 this quarter</div></div>
+      <div class="impact-card"><div class="impact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="impact-value">2.4T</div><div class="impact-label">Knowledge GDP (USD equiv.)</div><div class="impact-trend">↑ 18.3% this year</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="future" aria-labelledby="fut-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">13 · The Future Layer</span>
+      <h2 id="fut-title">Building the <span class="gradient-text">infrastructure of tomorrow</span></h2>
+      <p>CKH is not a destination. It is a foundation. Upon it, we will build systems that redefine how humanity values, distributes, and evolves knowledge.</p>
+    </div>
+    <div class="future-grid reveal">
+      <div class="future-card"><div class="future-num">F · 01</div><h4>AI Knowledge Curators</h4><p>Autonomous agents that surface, connect, and translate knowledge across languages and domains.</p></div>
+      <div class="future-card"><div class="future-num">F · 02</div><h4>Knowledge Wallets</h4><p>Personal sovereign vaults where every citizen owns, controls, and monetizes their intellectual contributions.</p></div>
+      <div class="future-card"><div class="future-num">F · 03</div><h4>Reputation Scores</h4><p>A new social layer based not on followers, but on the depth, accuracy, and impact of one's knowledge.</p></div>
+      <div class="future-card"><div class="future-num">F · 04</div><h4>Micro-Royalties</h4><p>Automated, perpetual attribution payments flowing back to originators every time their insight is used.</p></div>
+      <div class="future-card"><div class="future-num">F · 05</div><h4>Citizen DOI System</h4><p>A universal Digital Object Identifier for every human insight — making informal knowledge formally citable.</p></div>
+      <div class="future-card"><div class="future-num">F · 06</div><h4>Global Knowledge Infrastructure</h4><p>A public utility layer for knowledge, as essential as roads, water, and electricity.</p></div>
+      <div class="future-card"><div class="future-num">F · 07</div><h4>Knowledge GDP</h4><p>A new macroeconomic metric measuring the productive intellectual output of entire populations.</p></div>
+      <div class="future-card"><div class="future-num">F · 08</div><h4>Civilizational Intelligence Index</h4><p>A composite measure of humanity's collective capacity to learn, remember, and apply what it knows.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="manifesto" aria-labelledby="man-title">
+  <div class="container">
+    <div class="manifesto reveal">
+      <div class="manifesto-content">
+        <span class="eyebrow">14 · The Manifesto</span>
+        <h2 id="man-title" class="manifesto-quote">We are not merely <span class="hl">consumers</span> of knowledge.<br>We are <span class="hl">creators</span> of knowledge.</h2>
+        <div class="manifesto-lines">
+          <span>Every <em>observation</em> matters.</span>
+          <span>Every <em>experiment</em> matters.</span>
+          <span>Every <em>adaptation</em> matters.</span>
+          <span>The future should remember what humanity learns.</span>
+        </div>
+        <div class="manifesto-sig">— The CKH Protocol · June 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <div class="logo-mark" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="4" cy="4" r="1.5" fill="#00F5D4"/>
+              <circle cx="12" cy="4" r="1.5" fill="#6C63FF"/>
+              <circle cx="8" cy="12" r="1.5" fill="#F9C74F"/>
+              <path d="M4 4 L12 4 L8 12 Z" stroke="#00F5D4" stroke-width="0.5" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="logo-text">CKH<span>Protocol</span></div>
+        </a>
+        <p>Transforming everyday human experience into civilization's largest research commons. A public infrastructure for the invisible knowledge of billions.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Protocol</h5>
+        <ul>
+          <li><a href="#protocol">The 8 Stages</a></li>
+          <li><a href="#provenance">Provenance Index</a></li>
+          <li><a href="#dna">Knowledge DNA</a></li>
+          <li><a href="#taxonomy">Kallool Taxonomy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Commons</h5>
+        <ul>
+          <li><a href="#commons">Global Map</a></li>
+          <li><a href="#lineage">Lineage Network</a></li>
+          <li><a href="#impact">Impact Dashboard</a></li>
+          <li><a href="#memory">Memory Engine</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Principles</h5>
+        <ul>
+          <li><a href="#">Open Knowledge</a></li>
+          <li><a href="#">Attribution</a></li>
+          <li><a href="#">Transparency</a></li>
+          <li><a href="#">Decentralization</a></li>
+          <li><a href="#">Preservation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Citizen Knowledge Harvest Protocol · A civilizational project</div>
+      <div class="footer-principles">
+        <span>Open Knowledge</span>
+        <span>Attribution</span>
+        <span>Transparency</span>
+        <span>Decentralization</span>
+        <span>Preservation</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   NAV SCROLL
+   ============================================================ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+/* ============================================================
+   HERO CANVAS — Knowledge Nodes Network
+   ============================================================ */
+(function(){
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes = [], mouse = {x:-9999, y:-9999};
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initNodes();
+  }
+
+  function initNodes(){
+    const count = Math.min(120, Math.floor((w * h) / 12000));
+    nodes = [];
+    for(let i = 0; i < count; i++){
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.5 + 0.5,
+        color: ['#00F5D4','#6C63FF','#F9C74F'][Math.floor(Math.random()*3)],
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    // connections
+    for(let i = 0; i < nodes.length; i++){
+      for(let j = i+1; j < nodes.length; j++){
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if(d < 140){
+          const alpha = (1 - d/140) * 0.25;
+          ctx.strokeStyle = `rgba(0,245,212,${alpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    nodes.forEach(n => {
+      n.pulse += 0.02;
+      const pr = n.r + Math.sin(n.pulse) * 0.4;
+      // glow
+      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pr * 8);
+      grad.addColorStop(0, n.color + '40');
+      grad.addColorStop(1, n.color + '00');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, pr * 8, 0, Math.PI * 2);
+      ctx.fill();
+      // core
+      ctx.fillStyle = n.color;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, pr, 0, Math.PI * 2);
+      ctx.fill();
+      // move
+      n.x += n.vx; n.y += n.vy;
+      if(n.x < 0 || n.x > w) n.vx *= -1;
+      if(n.y < 0 || n.y > h) n.vy *= -1;
+      // mouse repel
+      const mdx = n.x - mouse.x;
+      const mdy = n.y - mouse.y;
+      const md = Math.sqrt(mdx*mdx + mdy*mdy);
+      if(md < 120){
+        n.x += (mdx/md) * 0.5;
+        n.y += (mdy/md) * 0.5;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+/* ============================================================
+   REVEAL ON SCROLL + COUNTERS
+   ============================================================ */
+function animateCounter(el){
+  const target = parseInt(el.dataset.counter, 10);
+  if(!target) return;
+  const duration = 2000;
+  const start = performance.now();
+  function step(now){
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.floor(target * eased);
+    el.textContent = val.toLocaleString();
+    if(p < 1) requestAnimationFrame(step);
+    else el.textContent = target.toLocaleString();
+  }
+  requestAnimationFrame(step);
+}
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.dataset.counter && !e.target.dataset.done){
+        e.target.dataset.done = '1';
+        animateCounter(e.target);
+      }
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.15});
+
+document.querySelectorAll('.reveal, [data-counter]').forEach(el => io.observe(el));
+
+/* ============================================================
+   PROTOCOL FLOW
+   ============================================================ */
+const protocolDetails = [
+  {t:'01 · Observe', d:'The protocol begins with noticing. A farmer sees that one corner of the field yields better. A mechanic hears an unfamiliar sound. A parent discovers that a particular rhythm calms a child. Observation is the seed of all knowledge — and the most frequently lost.'},
+  {t:'02 · Experiment', d:'From observation comes action. A small test. A changed method. A new combination of ingredients. The experiment is the bridge between noticing and knowing.'},
+  {t:'03 · Adapt', d:'No first attempt is final. Knowledge refines itself through iteration. What worked yesterday is adjusted today. Adaptation is the engine of practical wisdom.'},
+  {t:'04 · Document', d:'The moment of capture. A note. A photo. A voice memo. A sketch. Documentation transforms private knowing into shareable knowledge.'},
+  {t:'05 · Verify', d:'Claims need testing. Others try the method. Results are compared. Verification separates anecdote from reliable practice.'},
+  {t:'06 · Publish', d:'Knowledge released into the commons. Tagged, structured, discoverable. No longer trapped in one mind, one village, one generation.'},
+  {t:'07 · Cite', d:'Every insight has ancestors. Citation creates lineage — a map of how ideas travel, transform, and compound across time and space.'},
+  {t:'08 · Preserve', d:'The final act. Knowledge stored in permanent, distributed, open archives. Protected against forgetting. Available to generations unborn.'}
+];
+document.querySelectorAll('.protocol-step').forEach(step => {
+  step.addEventListener('click', () => {
+    document.querySelectorAll('.protocol-step').forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+    const idx = parseInt(step.dataset.step, 10);
+    const detail = protocolDetails[idx];
+    const el = document.getElementById('protocolDetail');
+    el.style.opacity = '0';
+    setTimeout(() => {
+      el.innerHTML = `<h3>${detail.t}</h3><p>${detail.d}</p>`;
+      el.style.opacity = '1';
+    }, 200);
+  });
+  step.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); step.click(); }
+  });
+});
+
+/* ============================================================
+   FORM — TAGS & CONFIDENCE
+   ============================================================ */
+const tagsInput = document.getElementById('tagsInput');
+const tagInputField = tagsInput.querySelector('.tag-input');
+tagInputField.addEventListener('keydown', e => {
+  if(e.key === 'Enter' && tagInputField.value.trim()){
+    e.preventDefault();
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.innerHTML = `${tagInputField.value.trim()}<button type="button" aria-label="Remove">×</button>`;
+    chip.querySelector('button').addEventListener('click', () => chip.remove());
+    tagsInput.insertBefore(chip, tagInputField);
+    tagInputField.value = '';
+  }
+});
+tagsInput.querySelectorAll('.tag-chip button').forEach(b => {
+  b.addEventListener('click', () => b.parentElement.remove());
+});
+tagsInput.addEventListener('click', () => tagInputField.focus());
+
+const confBar = document.getElementById('confidenceBar');
+const confValue = document.querySelector('.confidence-value');
+const confLabels = ['Speculative','Speculative','Tentative','Tentative','Preliminary insight','Moderate confidence','Strong indication','Well-supported','Highly reliable','Near-certain'];
+confBar.querySelectorAll('.confidence-seg').forEach(seg => {
+  seg.addEventListener('click', () => {
+    const v = parseInt(seg.dataset.val, 10);
+    confBar.querySelectorAll('.confidence-seg').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.val, 10) <= v);
+    });
+    confValue.textContent = `${v} / 10 · ${confLabels[v-1]}`;
+  });
+});
+
+function handleFormSubmit(){
+  const btn = event.target.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '✓ Published to Commons';
+  btn.style.background = 'var(--accent-2)';
+  setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 2400);
+}
+
+/* ============================================================
+   PROVENANCE INDEX
+   ============================================================ */
+const provData = {
+  O: {code:'O', label:'Raw Observation', desc:'A noticed pattern, untested. The seed of all knowledge.', score:'1 / 5'},
+  E: {code:'O<span class="sep">-</span>E', label:'Tested Observation', desc:'An observation that has been experimentally tested at least once.', score:'2 / 5'},
+  A: {code:'O<span class="sep">-</span>E<span class="sep">-</span>A', label:'Basic Insight', desc:'A documented observation that has been tested and adapted. Ready for replication.', score:'3 / 5'},
+  R: {code:'O<span class="sep">-</span>E<span class="sep">-</span>A<span class="sep">-</span>R', label:'Verified Practice', desc:'Independently replicated by others in different contexts. Reliability established.', score:'4 / 5'},
+  C: {code:'O<span class="sep">-</span>E<span class="sep">-</span>A<span class="sep">-</span>R<span class="sep">-</span>C', label:'Community Knowledge Asset', desc:'Endorsed by peer practitioners. A validated, citable, preservable unit of human knowledge.', score:'5 / 5'}
+};
+const provStages = document.querySelectorAll('.prov-stage');
+const provCode = document.getElementById('provCode');
+const provLabel = document.getElementById('provLabel');
+const provDesc = document.getElementById('provDesc');
+const provScore = document.getElementById('provScore');
+const provOrder = ['O','E','A','R','C'];
+
+provStages.forEach(stage => {
+  stage.addEventListener('click', () => {
+    const key = stage.dataset.prov;
+    const idx = provOrder.indexOf(key);
+    provStages.forEach((s, i) => s.classList.toggle('active', i <= idx));
+    const d = provData[key];
+    provCode.style.opacity = '0';
+    setTimeout(() => {
+      provCode.innerHTML = d.code;
+      provLabel.textContent = d.label;
+      provDesc.textContent = d.desc;
+      provScore.textContent = `Maturity · ${d.score}`;
+      provCode.style.opacity = '1';
+    }, 200);
+  });
+});
+
+/* ============================================================
+   KALLOOL TAXONOMY
+   ============================================================ */
+const taxonomyData = [
+  {n:'01', t:'Grassroots Agricultural Innovation', c:'148,293', d:'Farmer-led experiments in soil, seed, water, pest management, and crop rotation developed outside formal agricultural research.', tags:['soil','seed','irrigation','pest']},
+  {n:'02', t:'Tacit Mechanical Expertise', c:'92,847', d:'Knowledge held in the hands of mechanics, technicians, and repair workers — diagnostic intuitions no manual captures.', tags:['diagnostic','repair','tools']},
+  {n:'03', t:'Household Adaptive Intelligence', c:'214,928', d:'Parents, caregivers, and homemakers developing solutions for child-rearing, nutrition, space, and daily logistics.', tags:['parenting','nutrition','space']},
+  {n:'04', t:'Community Resource Innovation', c:'67,412', d:'Collective solutions for shared challenges — water, energy, waste, transport — invented at neighborhood scale.', tags:['water','energy','commons']},
+  {n:'05', t:'Informal Healthcare Knowledge', c:'128,491', d:'Traditional healers, midwives, and community health workers holding diagnostic and treatment knowledge outside clinical systems.', tags:['herbal','midwifery','care']},
+  {n:'06', t:'Local Environmental Intelligence', c:'54,218', d:'Observations of weather, ecology, wildlife, and landscape accumulated over lifetimes in specific places.', tags:['weather','ecology','landscape']},
+  {n:'07', t:'Craft and Artisan Knowledge', c:'89,347', d:'Techniques of making — textile, pottery, metalwork, woodwork — passed through apprenticeship, rarely written down.', tags:['textile','pottery','metal']},
+  {n:'08', t:'Micro Entrepreneurship Innovation', c:'176,294', d:'Business models, pricing, supply chain, and customer insights developed by informal traders and small operators.', tags:['trade','pricing','supply']},
+  {n:'09', t:'Crisis Adaptation Knowledge', c:'31,847', d:'Solutions invented under pressure — flood, drought, conflict, pandemic — where necessity becomes the mother of invention.', tags:['flood','conflict','pandemic']},
+  {n:'10', t:'Intergenerational Wisdom Systems', c:'42,183', d:'Knowledge passed through stories, rituals, songs, and practices — the deep memory of cultures.', tags:['oral','ritual','memory']}
+];
+const taxGrid = document.getElementById('taxonomyGrid');
+taxonomyData.forEach(item => {
+  const el = document.createElement('div');
+  el.className = 'tax-item';
+  el.innerHTML = `
+    <div class="tax-head">
+      <div class="tax-num">${item.n}</div>
+      <div class="tax-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="tax-title">${item.t}</div>
+      <div class="tax-count">${item.c}</div>
+      <svg class="tax-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="tax-body"><div class="tax-body-inner">
+      <p>${item.d}</p>
+      <div class="tax-tags">${item.tags.map(t => `<span class="tax-tag">#${t}</span>`).join('')}</div>
+    </div></div>`;
+  el.querySelector('.tax-head').addEventListener('click', () => el.classList.toggle('open'));
+  taxGrid.appendChild(el);
+});
+
+/* ============================================================
+   KNOWLEDGE DNA SVG
+   ============================================================ */
+(function(){
+  const helix = document.getElementById('dnaHelix');
+  const colors = ['#00F5D4','#6C63FF','#F9C74F','#00F5D4','#6C63FF','#F9C74F','#00F5D4'];
+  const cx = 250, cy = 250, r = 140;
+  let t = 0;
+  function drawHelix(){
+    helix.innerHTML = '';
+    const steps = 24;
+    for(let i = 0; i < steps; i++){
+      const angle = (i / steps) * Math.PI * 2 + t;
+      const x1 = cx + Math.cos(angle) * r;
+      const y1 = cy + Math.sin(angle) * r * 0.4;
+      const x2 = cx + Math.cos(angle + Math.PI) * r;
+      const y2 = cy + Math.sin(angle + Math.PI) * r * 0.4;
+      const z1 = Math.sin(angle);
+      const z2 = Math.sin(angle + Math.PI);
+      // connecting rung
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+      line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+      line.setAttribute('stroke', colors[i % colors.length]);
+      line.setAttribute('stroke-width', '1');
+      line.setAttribute('opacity', '0.3');
+      helix.appendChild(line);
+      // nodes
+      [{x:x1,y:y1,z:z1,c:colors[i%colors.length]},{x:x2,y:y2,z:z2,c:colors[(i+3)%colors.length]}].forEach(n => {
+        const scale = 0.6 + (n.z + 1) * 0.4;
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', n.x); c.setAttribute('cy', n.y);
+        c.setAttribute('r', 4 * scale);
+        c.setAttribute('fill', n.c);
+        c.setAttribute('opacity', 0.4 + scale * 0.6);
+        helix.appendChild(c);
+      });
+    }
+    t += 0.008;
+    requestAnimationFrame(drawHelix);
+  }
+  drawHelix();
+})();
+
+/* ============================================================
+   MEMORY TIMELINE AUTO-CYCLE
+   ============================================================ */
+(function(){
+  const stages = document.querySelectorAll('.memory-stage');
+  let idx = 0;
+  setInterval(() => {
+    stages.forEach(s => s.classList.remove('active'));
+    idx = (idx + 1) % stages.length;
+    stages[idx].classList.add('active');
+  }, 2500);
+})();
+
+/* ============================================================
+   LINEAGE NETWORK CANVAS
+   ============================================================ */
+(function(){
+  const canvas = document.getElementById('networkCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes = [], edges = [];
+  const colors = ['#00F5D4','#6C63FF','#F9C74F','#FF6B9D'];
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    init();
+  }
+
+  function init(){
+    nodes = []; edges = [];
+    const count = 60;
+    for(let i = 0; i < count; i++){
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+    for(let i = 0; i < nodes.length; i++){
+      const connections = Math.floor(Math.random() * 3) + 1;
+      for(let c = 0; c < connections; c++){
+        const j = Math.floor(Math.random() * nodes.length);
+        if(j !== i) edges.push([i, j]);
+      }
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    // edges
+    edges.forEach(([i, j]) => {
+      const a = nodes[i], b = nodes[j];
+      const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+      grad.addColorStop(0, a.color + '40');
+      grad.addColorStop(1, b.color + '40');
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 0.6;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+    });
+    // nodes
+    nodes.forEach(n => {
+      n.pulse += 0.03;
+      const pr = n.r + Math.sin(n.pulse) * 0.5;
+      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pr * 6);
+      grad.addColorStop(0, n.color + '50');
+      grad.addColorStop(1, n.color + '00');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, pr * 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = n.color;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, pr, 0, Math.PI * 2);
+      ctx.fill();
+      n.x += n.vx; n.y += n.vy;
+      if(n.x < 0 || n.x > w) n.vx *= -1;
+      if(n.y < 0 || n.y > h) n.vy *= -1;
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+/* ============================================================
+   WORLD MAP + LIVE FEED
+   ============================================================ */
+(function(){
+  const canvas = document.getElementById('worldCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, points = [], pulses = [];
+
+  // Rough world map outline points (simplified continents)
+  const continents = [
+    // North America
+    [[0.12,0.28],[0.18,0.22],[0.25,0.25],[0.3,0.32],[0.28,0.42],[0.22,0.48],[0.18,0.52],[0.15,0.45],[0.12,0.38]],
+    // South America
+    [[0.28,0.55],[0.32,0.58],[0.34,0.68],[0.32,0.78],[0.28,0.82],[0.26,0.72],[0.26,0.62]],
+    // Europe
+    [[0.48,0.28],[0.52,0.25],[0.56,0.28],[0.55,0.35],[0.5,0.38],[0.47,0.35]],
+    // Africa
+    [[0.48,0.42],[0.55,0.4],[0.6,0.48],[0.62,0.58],[0.58,0.7],[0.52,0.72],[0.48,0.62],[0.46,0.52]],
+    // Asia
+    [[0.58,0.25],[0.7,0.22],[0.82,0.28],[0.85,0.38],[0.8,0.45],[0.72,0.48],[0.65,0.42],[0.6,0.35]],
+    // Australia
+    [[0.8,0.62],[0.88,0.6],[0.92,0.66],[0.88,0.72],[0.82,0.7]]
+  ];
+
+  function resize(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initPoints();
+  }
+
+  function initPoints(){
+    points = [];
+    // Generate points within continents
+    for(let i = 0; i < 200; i++){
+      const cont = continents[Math.floor(Math.random() * continents.length)];
+      // random point inside polygon (approximate via bounding + check)
+      let x, y, inside = false, attempts = 0;
+      while(!inside && attempts < 20){
+        const minX = Math.min(...cont.map(p=>p[0]));
+        const maxX = Math.max(...cont.map(p=>p[0]));
+        const minY = Math.min(...cont.map(p=>p[1]));
+        const maxY = Math.max(...cont.map(p=>p[1]));
+        x = minX + Math.random() * (maxX - minX);
+        y = minY + Math.random() * (maxY - minY);
+        inside = pointInPoly([x,y], cont);
+        attempts++;
+      }
+      if(inside){
+        points.push({
+          x: x * w, y: y * h,
+          r: Math.random() * 1.5 + 0.5,
+          color: ['#00F5D4','#6C63FF','#F9C74F'][Math.floor(Math.random()*3)],
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+  }
+
+  function pointInPoly(p, poly){
+    let inside = false;
+    for(let i = 0, j = poly.length - 1; i < poly.length; j = i++){
+      const xi = poly[i][0], yi = poly[i][1];
+      const xj = poly[j][0], yj = poly[j][1];
+      const intersect = ((yi > p[1]) !== (yj > p[1])) && (p[0] < (xj - xi) * (p[1] - yi) / (yj - yi) + xi);
+      if(intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function drawMap(){
+    ctx.strokeStyle = 'rgba(0,245,212,0.15)';
+    ctx.lineWidth = 1;
+    continents.forEach(cont => {
+      ctx.beginPath();
+      cont.forEach((p, i) => {
+        const x = p[0] * w, y = p[1] * h;
+        if(i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(0,245,212,0.03)';
+      ctx.fill();
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    drawMap();
+    // pulses
+    pulses = pulses.filter(p => p.life > 0);
+    pulses.forEach(p => {
+      p.life -= 0.02;
+      p.r += 0.5;
+      ctx.strokeStyle = `rgba(0,245,212,${p.life * 0.6})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.stroke();
+    });
+    // points
+    points.forEach(p => {
+      p.pulse += 0.04;
+      const pr = p.r + Math.sin(p.pulse) * 0.3;
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = 0.6 + Math.sin(p.pulse) * 0.3;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, pr, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    });
+    requestAnimationFrame(draw);
+  }
+
+  // Spawn pulses
+  setInterval(() => {
+    if(points.length){
+      const p = points[Math.floor(Math.random() * points.length)];
+      pulses.push({x: p.x, y: p.y, r: 2, life: 1});
+    }
+  }, 400);
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+
+  // Live feed
+  const feed = document.getElementById('commonsFeed');
+  const feedItems = [
+    ['Rural India','Soil moisture technique shared'],
+    ['Nairobi, Kenya','Water purification insight verified'],
+    ['São Paulo, Brazil','Urban farming method replicated'],
+    ['Jakarta, Indonesia','Flood adaptation protocol cited'],
+    ['Oslo, Norway','AI-curated knowledge cluster formed'],
+    ['Lima, Peru','Textile pattern archived'],
+    ['Bangkok, Thailand','Street vendor pricing model published'],
+    ['Cairo, Egypt','Herbal remedy cross-referenced'],
+    ['Lagos, Nigeria','Community energy solution replicated'],
+    ['Mexico City','Child nutrition insight validated'],
+    ['Dhaka, Bangladesh','Flood-resistant crop method cited'],
+    ['Berlin, Germany','Cross-language knowledge bridge formed']
+  ];
+  setInterval(() => {
+    const item = feedItems[Math.floor(Math.random() * feedItems.length)];
+    const el = document.createElement('div');
+    el.className = 'feed-item';
+    el.innerHTML = `<strong>${item[0]}</strong> · ${item[1]}`;
+    feed.appendChild(el);
+    const items = feed.querySelectorAll('.feed-item');
+    if(items.length > 5) items[0].remove();
+  }, 2500);
+
+  // Stats counter
+  const csContrib = document.getElementById('csContrib');
+  const csEntries = document.getElementById('csEntries');
+  setInterval(() => {
+    const c = parseInt(csContrib.textContent.replace(/,/g,''), 10);
+    csContrib.textContent = (c + Math.floor(Math.random()*5) + 1).toLocaleString();
+    const e = parseInt(csEntries.textContent.replace(/,/g,''), 10);
+    csEntries.textContent = (e + Math.floor(Math.random()*3) + 1).toLocaleString();
+  }, 1800);
+})();
+</script>
+
+</body>
+</html>
